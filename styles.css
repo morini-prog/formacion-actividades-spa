@@ -225,6 +225,18 @@ body.dark-theme .app-header {
   border-color: var(--danger);
 }
 
+.btn-danger {
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger);
+}
+.btn-danger:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+  border-color: var(--danger);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.15);
+}
+
 .btn-icon {
   background: transparent;
   border: 1px solid var(--border-color);

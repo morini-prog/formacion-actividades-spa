@@ -545,6 +545,7 @@ function initTeacherPanel() {
   const exitBtn = document.getElementById('btn-exit-teacher');
   const refreshBtn = document.getElementById('btn-refresh-teacher');
   const exportBtn = document.getElementById('btn-export-csv');
+  const clearBtn = document.getElementById('btn-clear-db');
 
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -590,6 +591,48 @@ function initTeacherPanel() {
 
   exportBtn.addEventListener('click', () => {
     exportDataToCSV();
+  });
+
+  clearBtn.addEventListener('click', async () => {
+    const password = prompt('Por favor, confirme ingresando la contraseña docente:');
+    if (!password) return;
+    if (password !== '2228') {
+      alert('Contraseña incorrecta.');
+      return;
+    }
+    
+    if (!confirm('¿Está absolutamente seguro de que desea eliminar TODOS los registros de estudiantes y entregas? Esta acción no se puede deshacer.')) {
+      return;
+    }
+
+    try {
+      clearBtn.disabled = true;
+      clearBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Limpiando...';
+
+      const res = await fetch(`${API_BASE}/database`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          type: 'clear_database',
+          password: password
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error('Error al limpiar base de datos.');
+      }
+
+      alert('Base de datos limpiada con éxito.');
+      await loadTeacherData();
+    } catch (err) {
+      console.error(err);
+      alert('Ocurrió un error al limpiar los registros: ' + err.message);
+    } finally {
+      clearBtn.disabled = false;
+      clearBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i> Limpiar Registros';
+    }
   });
 }
 

@@ -225,6 +225,23 @@ exports.handler = async (event, context) => {
         };
       }
 
+      if (type === 'clear_database') {
+        const { password } = body;
+        if (password !== '2228') {
+          return { statusCode: 403, headers, body: JSON.stringify({ error: 'Acceso no autorizado' }) };
+        }
+
+        db.students = [];
+        db.submissions = [];
+
+        await saveDB(GITHUB_REPO, GITHUB_TOKEN, db, sha);
+        return {
+          statusCode: 200,
+          headers,
+          body: JSON.stringify({ success: true, isMock })
+        };
+      }
+
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'Acción inválida' }) };
     }
 
