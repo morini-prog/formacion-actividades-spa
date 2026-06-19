@@ -4,16 +4,40 @@
 
 const ACTIVITIES = {
   1: {
-    title: "DNC y Criterio de Retorno Inversión (Págs. 3-5)",
-    instruction: "Caso: PyME comercial argentina con alta rotación y resistencia al cambio en el proceso de digitalización. Diseñá el proceso de DNC proponiendo al menos DOS herramientas del material (encuestas, cuestionarios, observación directa, registros de desempeño) y cómo involucrarás activamente al personal (Pág. 5). Además, debés justificar teóricamente la inversión en capacitación citando formalmente a HUSELID (1995) o el informe de LINKEDIN (2020) sobre la retención de talento (Pág. 3)."
+    title: "1. Concepto y Objetivos (Págs. 2-3)",
+    instruction: "Caso: PyME comercial argentina en digitalización. Respondé: 1) ¿Cuáles son los 5 objetivos comunes de la formación descritos en el material? 2) ¿Cuál es la diferencia teórica clave entre 'formación' y 'desarrollo' a largo plazo según el texto?"
   },
   2: {
-    title: "Planificación Pedagógica, Habilidades Blandas y Metodologías (Págs. 5-8, 10)",
-    instruction: "Para la PyME comercial, redactá un objetivo de capacitación comercial para el equipo utilizando estrictamente la metodología SMART (Pág. 5). Luego, diseñá la estrategia pedagógica combinando al menos DOS metodologías del material (Pág. 7-8) y detallando cómo desarrollarás las habilidades blandas basándote en el enfoque implementado por GOOGLE (Pág. 10)."
+    title: "2. Importancia y Retención de Talento (Págs. 3-4)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) Según el reporte de LinkedIn (2020), ¿qué porcentaje de empleados se quedaría más tiempo si la empresa invierte en su desarrollo? 2) ¿Qué autor (1995) se cita para demostrar que capacitar al personal mejora el rendimiento de la organización?"
   },
   3: {
-    title: "Proceso de Evaluación e Innovación Cultural (Págs. 6-7, 9)",
-    instruction: "Estructurá el plan de evaluación del programa de capacitación de la PyME comercial. Debés seguir y fundamentar los SEIS pasos clave descritos en la Pág. 6-7 del material (establecer criterios, recolectar datos, buscar insights, interpretar resultados, ajustar y retroalimentar). Finalmente, proponé cómo construirás una cultura de aprendizaje continuo basada en la experimentación y la tolerancia al error (Pág. 9)."
+    title: "3. Diagnóstico de Necesidades - DNC (Págs. 4-5)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) Además de encuestas/cuestionarios, ¿qué otras 2 herramientas específicas sugiere el texto en la Pág. 4 para recolectar información sobre brechas? 2) ¿A quiénes se debe involucrar activamente en este proceso para garantizar su validez?"
+  },
+  4: {
+    title: "4. Diseñando Programas - Metodología SMART (Págs. 5-6)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) Redactá un objetivo comercial de capacitación para el equipo de ventas usando la metodología SMART de la Pág. 5 (explicando sus siglas). 2) ¿Qué metodologías o formatos de contenidos prácticos menciona el texto para adaptarse a diferentes estilos?"
+  },
+  5: {
+    title: "5. El Poder de la Evaluación (Págs. 6-7)",
+    instruction: "Caso: PyME comercial argentina. Respondé: Enumerá e implementá los 6 pasos del proceso de evaluación descritos en el material (Pág. 6-7) para medir la efectividad del plan de formación."
+  },
+  6: {
+    title: "6. Herramientas y Técnicas de Formación (Págs. 7-8)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Cómo define el documento el 'microaprendizaje' (g) y el 'aprendizaje colaborativo' (h)? 2) ¿Qué técnica se describe como un 'espejo que refleja una imagen completa' recopilando feedback de colegas y subordinados?"
+  },
+  7: {
+    title: "7. Programas de Sucesión de Liderazgo (Págs. 8-9)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Cómo define el texto a los programas de sucesión de talento ('es como un...')? 2) ¿Qué pasos de entrenamiento intensivo y mentoría se deben seguir una vez identificados los futuros líderes?"
+  },
+  8: {
+    title: "8. Aprendizaje Organizacional y Cultura Continua (Págs. 9-10)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Qué mentalidad se debe fomentar en la organización respecto a los errores para crear una cultura de aprendizaje continuo? 2) ¿Qué tecnologías específicas se sugieren en la Pág. 10 para facilitarlo?"
+  },
+  9: {
+    title: "9. Aprendizaje Basado en Habilidades Blandas (Pág. 10)",
+    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Qué 3 habilidades blandas destaca el texto que promueve una empresa líder mundial como Google? 2) ¿Cómo se debe evaluar el progreso del desarrollo de habilidades blandas según el material?"
   }
 };
 
@@ -230,11 +254,11 @@ function logoutStudent() {
 // STUDENT DASHBOARD RENDERER & GAMIFICATION
 // ==========================================================================
 function calculateBadge(score) {
-  if (score >= 3 && score <= 6) {
+  if (score >= 9 && score <= 20) {
     return { name: "Aprendiz de Formación 🛡️", color: "#6b7280" };
-  } else if (score >= 7 && score <= 11) {
+  } else if (score >= 21 && score <= 35) {
     return { name: "Especialista en Desarrollo 🚀", color: "#004bff" };
-  } else if (score >= 12 && score <= 15) {
+  } else if (score >= 36 && score <= 45) {
     return { name: "Líder de Aprendizaje 👑", color: "#10b981" };
   }
   return { name: "Pendiente de Calificación", color: "var(--text-secondary)" };
@@ -256,7 +280,7 @@ function renderStudentDashboard() {
   let totalScoreSum = 0;
   let completedCount = 0;
 
-  for (let idx = 1; idx <= 3; idx++) {
+  for (let idx = 1; idx <= 9; idx++) {
     const submission = state.submissions.find(s => s.activityIndex === idx);
     const card = document.getElementById(`card-act-${idx}`);
     const dot = document.getElementById(`dot-act-${idx}`);
@@ -279,12 +303,12 @@ function renderStudentDashboard() {
   }
 
   // Update overall progress bar
-  const progressPct = Math.round((completedCount / 3) * 100);
+  const progressPct = Math.round((completedCount / 9) * 100);
   document.getElementById('progress-percentage').innerText = `${progressPct}% completado`;
   document.getElementById('progress-bar-fill').style.width = `${progressPct}%`;
 
   // Update Stats & Gamification Badge
-  document.getElementById('total-score').innerText = `${totalScoreSum} / 15`;
+  document.getElementById('total-score').innerText = `${totalScoreSum} / 45`;
   const badgeInfo = calculateBadge(totalScoreSum);
   const badgeTag = document.getElementById('current-badge');
   badgeTag.innerText = badgeInfo.name;
@@ -293,12 +317,12 @@ function renderStudentDashboard() {
 
   // Finalization Certificate Check
   const certCard = document.getElementById('certificate-unlock-card');
-  if (completedCount === 3) {
+  if (completedCount === 9) {
     certCard.style.display = 'flex';
     
     // Fill in certificate information
     document.getElementById('cert-student-name').innerText = fullName;
-    document.getElementById('cert-score').innerText = `${totalScoreSum} / 15 Puntos`;
+    document.getElementById('cert-score').innerText = `${totalScoreSum} / 45 Puntos`;
     document.getElementById('cert-badge').innerText = badgeInfo.name;
     
     // Format current date in Argentine Spanish
@@ -574,7 +598,7 @@ function renderTeacherTable() {
   tableBody.innerHTML = '';
 
   if (state.allStudents.length === 0) {
-    tableBody.innerHTML = '<tr><td colspan="9" class="table-loading">No se encontraron estudiantes registrados.</td></tr>';
+    tableBody.innerHTML = '<tr><td colspan="7" class="table-loading">No se encontraron estudiantes registrados.</td></tr>';
     return;
   }
 
@@ -582,14 +606,11 @@ function renderTeacherTable() {
     const email = student.email;
     const subs = state.allSubmissions.filter(s => s.student_email === email);
     
-    // Scores for each activity
-    const s1 = subs.find(s => s.activityIndex === 1)?.score || 0;
-    const s2 = subs.find(s => s.activityIndex === 2)?.score || 0;
-    const s3 = subs.find(s => s.activityIndex === 3)?.score || 0;
-    const totalScore = s1 + s2 + s3;
+    // Sum of all grades
+    const totalScore = subs.reduce((sum, s) => sum + s.score, 0);
 
     // Badges based on scores
-    const completedAll = subs.length === 3;
+    const completedAll = subs.length === 9;
     const badgeInfo = completedAll ? calculateBadge(totalScore) : { name: "Pendiente", color: "#6b7280" };
 
     const regDate = new Date(student.created_at).toLocaleDateString('es-AR');
@@ -598,10 +619,8 @@ function renderTeacherTable() {
     row.innerHTML = `
       <td style="font-weight:700;">${student.first_name} ${student.last_name}</td>
       <td style="color:var(--text-secondary);">${student.email}</td>
-      <td>${s1 > 0 ? s1 + '/5' : '—'}</td>
-      <td>${s2 > 0 ? s2 + '/5' : '—'}</td>
-      <td>${s3 > 0 ? s3 + '/5' : '—'}</td>
-      <td style="font-weight:900;">${totalScore > 0 ? totalScore + '/15' : '—'}</td>
+      <td style="font-weight:600;">${subs.length} / 9</td>
+      <td style="font-weight:900;">${totalScore > 0 ? totalScore + ' / 45' : '—'}</td>
       <td>
         <span class="badge-pill" style="border-color:${badgeInfo.color}; color:${badgeInfo.color}; font-size:0.75rem;">
           ${badgeInfo.name}
@@ -635,7 +654,7 @@ window.viewStudentDetail = function(studentEmail) {
   const container = document.getElementById('detail-submissions-container');
   container.innerHTML = '';
 
-  for (let idx = 1; idx <= 3; idx++) {
+  for (let idx = 1; idx <= 9; idx++) {
     const activityData = ACTIVITIES[idx];
     const sub = subs.find(s => s.activityIndex === idx);
 
@@ -704,30 +723,24 @@ function exportDataToCSV() {
     return;
   }
 
-  // CSV Columns Definitions
+  // CSV Columns Definitions for 9 activities
   const headers = [
     "Nombre",
     "Apellido",
     "Email",
-    "Fecha Registro",
-    "Act 1 Puntaje",
-    "Act 1 Reflexion",
-    "Act 1 URL",
-    "Act 1 Justificacion",
-    "Act 1 Feedback",
-    "Act 2 Puntaje",
-    "Act 2 Reflexion",
-    "Act 2 URL",
-    "Act 2 Justificacion",
-    "Act 2 Feedback",
-    "Act 3 Puntaje",
-    "Act 3 Reflexion",
-    "Act 3 URL",
-    "Act 3 Justificacion",
-    "Act 3 Feedback",
-    "Puntaje Total",
-    "Insignia"
+    "Fecha Registro"
   ];
+
+  for (let i = 1; i <= 9; i++) {
+    headers.push(`Act ${i} Puntaje`);
+    headers.push(`Act ${i} Reflexion`);
+    headers.push(`Act ${i} URL`);
+    headers.push(`Act ${i} Justificacion`);
+    headers.push(`Act ${i} Feedback`);
+  }
+
+  headers.push("Puntaje Total");
+  headers.push("Insignia");
 
   const csvRows = [headers.map(h => `"${h.replace(/"/g, '""')}"`).join(",")];
 
@@ -735,11 +748,11 @@ function exportDataToCSV() {
     const email = student.email;
     const subs = state.allSubmissions.filter(s => s.student_email === email);
     
-    // Extract info for all 3 activities
+    // Extract info for all 9 activities
     const actData = [];
     let totalScore = 0;
 
-    for (let idx = 1; idx <= 3; idx++) {
+    for (let idx = 1; idx <= 9; idx++) {
       const s = subs.find(sub => sub.activityIndex === idx);
       if (s) {
         actData.push(s.score.toString());
@@ -754,7 +767,7 @@ function exportDataToCSV() {
       }
     }
 
-    const completedAll = subs.length === 3;
+    const completedAll = subs.length === 9;
     const badgeInfo = completedAll ? calculateBadge(totalScore) : { name: "Pendiente", color: "#666" };
 
     const rowData = [
