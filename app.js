@@ -673,7 +673,8 @@ function renderTeacherTable() {
     const completedAll = subs.length === 9;
     const badgeInfo = completedAll ? calculateBadge(totalScore) : { name: "Pendiente", color: "#6b7280" };
 
-    const regDate = new Date(student.created_at).toLocaleDateString('es-AR');
+    const dateObj = new Date(student.created_at);
+    const regDate = dateObj.toLocaleDateString('es-AR') + ' ' + dateObj.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
 
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -722,10 +723,15 @@ window.viewStudentDetail = function(studentEmail) {
     actBox.className = 'detail-act-box';
 
     if (sub) {
+      const subDate = new Date(sub.submitted_at);
+      const formattedSubDate = subDate.toLocaleDateString('es-AR') + ' ' + subDate.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
       actBox.innerHTML = `
         <div class="detail-act-header">
           <h4>Actividad 0${idx}: ${activityData.title}</h4>
-          <span class="score-badge">${sub.score}/5 pts</span>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="font-size:0.75rem; color:var(--text-secondary);">${formattedSubDate}</span>
+            <span class="score-badge">${sub.score}/5 pts</span>
+          </div>
         </div>
         <div class="detail-field">
           <span class="detail-label">${escapeHTML(activityData.questions[0])}</span>
@@ -824,11 +830,14 @@ function exportDataToCSV() {
     const completedAll = subs.length === 9;
     const badgeInfo = completedAll ? calculateBadge(totalScore) : { name: "Pendiente", color: "#666" };
 
+    const createdDate = new Date(student.created_at);
+    const formattedCreatedDate = isNaN(createdDate.getTime()) ? "" : createdDate.toLocaleDateString('es-AR') + ' ' + createdDate.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+
     const rowData = [
       student.first_name,
       student.last_name,
       student.email,
-      student.created_at,
+      formattedCreatedDate,
       ...actData,
       totalScore.toString(),
       badgeInfo.name
