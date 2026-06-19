@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRO-TALENT | Formación y Desarrollo - Portal de Actividades</title>
+  <!-- Google Fonts - Inter for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <!-- FontAwesome for UI Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- html2canvas for certificate image generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-box">PT</span>
+      <div class="logo-text">
+        <h1>PRO-TALENT</h1>
+        <span class="subtitle">Formación & Desarrollo</span>
+      </div>
+    </div>
+    
+    <div class="header-actions">
+      <button id="theme-toggle" class="btn-icon" aria-label="Cambiar Tema" title="Cambiar Tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button id="teacher-access-btn" class="btn btn-outline" title="Acceso Docente">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <span>Acceso Docente</span>
+      </button>
+      <button id="logout-btn" class="btn btn-outline btn-logout" style="display: none;" title="Cerrar Sesión">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    
+    <!-- 1. REGISTER / LOGIN VIEW -->
+    <section id="view-auth" class="auth-card view-section active">
+      <div class="card-header">
+        <h2>Registro de Estudiante</h2>
+        <p>Ingresá tus datos para iniciar el módulo práctico de actividades.</p>
+      </div>
+      <form id="auth-form" class="form-grid">
+        <div class="form-group">
+          <label for="student-name">Nombre</label>
+          <input type="text" id="student-name" placeholder="Ej. Juan" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="student-lastname">Apellido</label>
+          <input type="text" id="student-lastname" placeholder="Ej. Pérez" required autocomplete="family-name">
+        </div>
+        <div class="form-group full-width">
+          <label for="student-email">Correo Electrónico</label>
+          <input type="email" id="student-email" placeholder="juan.perez@ejemplo.com" required autocomplete="email">
+        </div>
+        <button type="submit" class="btn btn-primary full-width">
+          Comenzar Actividades <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </section>
+
+    <!-- 2. STUDENT DASHBOARD VIEW -->
+    <section id="view-student" class="student-dashboard view-section">
+      <!-- Welcome Banner -->
+      <div class="student-profile-bar">
+        <div class="student-info-main">
+          <span class="avatar-circle" id="student-avatar">JP</span>
+          <div>
+            <h2 id="student-fullname-display">Cargando Estudiante...</h2>
+            <p id="student-email-display">email@ejemplo.com</p>
+          </div>
+        </div>
+        <div class="student-stats">
+          <div class="stat-box">
+            <span class="stat-label">Puntaje Total</span>
+            <span class="stat-val" id="total-score">0 / 15</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Insignia</span>
+            <span class="badge-status-tag" id="current-badge">Pendiente 🛡️</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module Context Brief -->
+      <div class="dashboard-context-card">
+        <h3>Módulo Práctico: Aplicación de Formación y Desarrollo</h3>
+        <p>Para completar el módulo de forma autónoma, debés resolver las siguientes <strong>3 actividades reflexivas</strong> de investigación y auto-evaluación. Cada entrega será evaluada con inteligencia artificial a través del modelo Google Gemini en base a una rúbrica de <strong>1 a 5 puntos</strong>.</p>
+        
+        <div class="progress-container">
+          <div class="progress-text-bar">
+            <span>Progreso del Módulo</span>
+            <span id="progress-percentage">0% completado</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progress-bar-fill" class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activities Grid -->
+      <div class="activities-grid">
+        <!-- Activity Card 1 -->
+        <div class="activity-card" id="card-act-1" onclick="openActivity(1)">
+          <div class="card-status-dot" id="dot-act-1"></div>
+          <span class="card-number">Actividad 01</span>
+          <h3>Diagnóstico de Necesidades de Capacitación (DNC)</h3>
+          <p class="card-desc">Identificación de brechas de habilidades clave y necesidades organizacionales específicas.</p>
+          <div class="card-footer-info">
+            <span class="badge-pill" id="pill-act-1">Pendiente</span>
+            <span class="score-badge" id="score-act-1" style="display: none;">0/5 pts</span>
+          </div>
+        </div>
+
+        <!-- Activity Card 2 -->
+        <div class="activity-card" id="card-act-2" onclick="openActivity(2)">
+          <div class="card-status-dot" id="dot-act-2"></div>
+          <span class="card-number">Actividad 02</span>
+          <h3>Diseño y Formulación del Plan de Capacitación</h3>
+          <p class="card-desc">Definición de objetivos pedagógicos, recursos educativos y estrategias de aprendizaje blended.</p>
+          <div class="card-footer-info">
+            <span class="badge-pill" id="pill-act-2">Pendiente</span>
+            <span class="score-badge" id="score-act-2" style="display: none;">0/5 pts</span>
+          </div>
+        </div>
+
+        <!-- Activity Card 3 -->
+        <div class="activity-card" id="card-act-3" onclick="openActivity(3)">
+          <div class="card-status-dot" id="dot-act-3"></div>
+          <span class="card-number">Actividad 03</span>
+          <h3>Evaluación del Retorno y Transferencia</h3>
+          <p class="card-desc">Implementación del Modelo de Kirkpatrick para medir el impacto de la capacitación en el puesto real.</p>
+          <div class="card-footer-info">
+            <span class="badge-pill" id="pill-act-3">Pendiente</span>
+            <span class="score-badge" id="score-act-3" style="display: none;">0/5 pts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Download Box (Appears when all 3 are completed) -->
+      <div class="certificate-unlock-card" id="certificate-unlock-card" style="display: none;">
+        <div class="certificate-banner-text">
+          <i class="fa-solid fa-circle-check unlock-icon animate-pulse"></i>
+          <div>
+            <h3>¡Felicidades! Módulo Finalizado</h3>
+            <p>Has completado y aprobado todas las actividades obligatorias. Ya podés descargar tu certificado de finalización.</p>
+          </div>
+        </div>
+        
+        <!-- The actual digital certificate container that will be captured -->
+        <div class="certificate-wrapper-box">
+          <div id="completion-certificate" class="completion-certificate">
+            <div class="cert-border-outer">
+              <div class="cert-border-inner">
+                <div class="cert-header">
+                  <span class="cert-org">PRO-TALENT ACADEMY</span>
+                  <div class="cert-seal">
+                    <i class="fa-solid fa-award"></i>
+                  </div>
+                </div>
+                
+                <h2 class="cert-title">Certificado de Aprobación</h2>
+                <p class="cert-presentation">Se certifica que</p>
+                <h3 class="cert-recipient" id="cert-student-name">Juan Pérez</h3>
+                <p class="cert-reason">ha completado satisfactoriamente el módulo práctico de</p>
+                <h4 class="cert-module-name">Formación y Desarrollo de Empleados</h4>
+                
+                <div class="cert-details-grid">
+                  <div class="cert-detail">
+                    <span class="cert-det-label">Desempeño Obtenido</span>
+                    <span class="cert-det-val" id="cert-score">15 / 15 Puntos</span>
+                  </div>
+                  <div class="cert-detail">
+                    <span class="cert-det-label">Insignia Otorgada</span>
+                    <span class="cert-det-val" id="cert-badge">Líder de Aprendizaje 👑</span>
+                  </div>
+                  <div class="cert-detail">
+                    <span class="cert-det-label">Fecha de Emisión</span>
+                    <span class="cert-det-val" id="cert-date">19 de Junio, 2026</span>
+                  </div>
+                </div>
+                
+                <div class="cert-signatures">
+                  <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <span class="sig-title">Dirección de Formación</span>
+                  </div>
+                  <div class="sig-block">
+                    <div class="sig-seal-mock">
+                      <span class="seal-icon">PT</span>
+                      <span class="seal-text">VERIFICADO</span>
+                    </div>
+                  </div>
+                  <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <span class="sig-title">Evaluador Inteligencia Artificial</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="download-cert-btn" class="btn btn-primary btn-large">
+          <i class="fa-solid fa-download"></i> Descargar Certificado como Imagen (.PNG)
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. DETAILED ACTIVITY EDIT/WORK PANEL (MODAL OVERLAY) -->
+    <div id="panel-activity" class="activity-overlay">
+      <div class="activity-modal">
+        <button class="modal-close-btn" onclick="closeActivity()">&times;</button>
+        
+        <div class="modal-header">
+          <span class="modal-activity-num" id="modal-act-num">Actividad 01</span>
+          <h2 id="modal-act-title">Título de la Actividad</h2>
+          <p class="activity-instruction" id="modal-act-instruction">Instrucciones detalladas de la actividad...</p>
+        </div>
+
+        <div class="modal-content-grid">
+          <!-- Submission Form -->
+          <form id="activity-form" class="modal-form">
+            <div class="form-group">
+              <label for="act-reflection">1. Análisis y Reflexión del Tema</label>
+              <textarea id="act-reflection" placeholder="Escribí tu reflexión teórica o análisis práctico detallando los puntos clave..." rows="6" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="act-url">2. Enlace (URL) de Recurso de Investigación</label>
+              <input type="url" id="act-url" placeholder="https://ejemplo.com/articulo-o-video-relacionado" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="act-justification">3. Justificación del Recurso Elegido</label>
+              <textarea id="act-justification" placeholder="Justificá con argumentos sólidos por qué el artículo o video es valioso para esta temática..." rows="4" required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" onclick="closeActivity()">Volver</button>
+              <button type="submit" class="btn btn-primary" id="btn-submit-eval">
+                <span class="btn-text">Enviar para Evaluación IA</span>
+                <span class="loader-inline" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Procesando...</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Feedback Sidebar (hidden/visible dynamically) -->
+          <div class="feedback-sidebar" id="feedback-sidebar">
+            <div class="feedback-sidebar-placeholder" id="feedback-placeholder">
+              <i class="fa-solid fa-robot"></i>
+              <h4>Evaluación Automatizada</h4>
+              <p>Completá los campos de la izquierda y hacé clic en "Enviar" para recibir tu feedback académico instantáneo de Gemini AI.</p>
+            </div>
+            
+            <div class="feedback-sidebar-content" id="feedback-content" style="display: none;">
+              <div class="feedback-score-bar">
+                <h4>Tu Calificación</h4>
+                <div class="score-circle">
+                  <span class="score-num" id="feedback-score-display">0</span>
+                  <span class="score-total">/ 5</span>
+                </div>
+              </div>
+              <div class="feedback-text-box">
+                <h5>Devolución de la IA:</h5>
+                <p id="feedback-text-display">...</p>
+              </div>
+              <div class="feedback-status-pill">
+                <i class="fa-solid fa-circle-check"></i> Actividad Aprobada
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. TEACHER PANEL VIEW -->
+    <section id="view-teacher" class="teacher-panel view-section">
+      <!-- Authorization Screen (shown if not logged in as teacher) -->
+      <div id="teacher-login" class="auth-card teacher-auth">
+        <div class="card-header">
+          <h2>Acceso Docente Autorizado</h2>
+          <p>Ingresá la contraseña para acceder al panel de seguimiento académico de alumnos.</p>
+        </div>
+        <form id="teacher-login-form" class="form-grid">
+          <div class="form-group full-width">
+            <label for="teacher-password">Contraseña de Acceso</label>
+            <input type="password" id="teacher-password" placeholder="••••" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary full-width">
+            Verificar Contraseña <i class="fa-solid fa-lock-open"></i>
+          </button>
+          <p class="error-msg" id="teacher-password-error" style="display: none;">Contraseña incorrecta. Por favor, reintentá.</p>
+        </form>
+      </div>
+
+      <!-- Main Dashboard (shown after password verification) -->
+      <div id="teacher-dashboard" style="display: none;">
+        <div class="teacher-header-bar">
+          <div>
+            <h2>Panel del Cuerpo Docente</h2>
+            <p>Monitoreo en tiempo real de los envíos de los estudiantes y el feedback de la IA.</p>
+          </div>
+          <div class="teacher-actions">
+            <button id="btn-export-csv" class="btn btn-primary">
+              <i class="fa-solid fa-file-csv"></i> Exportar a CSV
+            </button>
+            <button id="btn-refresh-teacher" class="btn btn-outline" title="Actualizar datos">
+              <i class="fa-solid fa-rotate"></i> Actualizar
+            </button>
+            <button id="btn-exit-teacher" class="btn btn-outline">
+              <i class="fa-solid fa-arrow-left-long"></i> Salir del Panel
+            </button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table" id="students-table">
+            <thead>
+              <tr>
+                <th>Estudiante</th>
+                <th>Email</th>
+                <th>Act. 01</th>
+                <th>Act. 02</th>
+                <th>Act. 03</th>
+                <th>Total (15)</th>
+                <th>Insignia</th>
+                <th>Fecha Ingreso</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="students-table-body">
+              <tr>
+                <td colspan="9" class="table-loading">Cargando registros...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>&copy; 2026 PRO-TALENT. Módulo IV: Formación y Desarrollo.</p>
+    <div class="version-tag">Premium Edition v2.0</div>
+  </footer>
+
+  <!-- Detail Modal for Student Submissions (inside Teacher Panel) -->
+  <div id="panel-student-detail" class="activity-overlay">
+    <div class="detail-modal">
+      <button class="modal-close-btn" onclick="closeStudentDetail()">&times;</button>
+      <div class="modal-header">
+        <h2 id="detail-student-name">Nombre del Alumno</h2>
+        <p id="detail-student-email">alumno@ejemplo.com</p>
+      </div>
+      
+      <div class="modal-content" id="detail-submissions-container">
+        <!-- Loaded dynamically -->
+      </div>
+      
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="closeStudentDetail()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
