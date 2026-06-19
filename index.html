@@ -503,6 +503,18 @@
 
       <div class="modal-content-single">
         <form id="activity-form" class="modal-form-full">
+          <!-- Card de Devolución de la IA (visible solo si ya fue entregada) -->
+          <div id="feedback-alert-box" class="feedback-card" style="display: none;">
+            <div class="feedback-card-header">
+              <div class="feedback-card-title-group">
+                <i class="fa-solid fa-robot"></i>
+                <h4>Devolución de la IA</h4>
+              </div>
+              <span id="feedback-card-score" class="feedback-score-pill">0/5 pts</span>
+            </div>
+            <p id="feedback-card-text" class="feedback-card-text">...</p>
+          </div>
+
           <div class="form-group">
             <label id="lbl-act-q1" for="act-q1">1. Pregunta 1</label>
             <textarea id="act-q1" placeholder="Escribí tu respuesta aquí..." rows="4" required></textarea>

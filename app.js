@@ -406,12 +406,19 @@ window.openActivity = function(activityIndex) {
 
   // Check if student already submitted this
   const existingSub = state.submissions.find(s => s.activityIndex === activityIndex);
+  const feedbackAlertBox = document.getElementById('feedback-alert-box');
   
   if (existingSub) {
+    feedbackAlertBox.style.display = 'flex';
+    document.getElementById('feedback-card-score').innerText = `${existingSub.score}/5 pts`;
+    document.getElementById('feedback-card-text').innerText = existingSub.feedback;
+    
     document.getElementById('act-q1').value = existingSub.q1 || existingSub.reflection || '';
     document.getElementById('act-q2').value = existingSub.q2 || existingSub.url || '';
     document.getElementById('act-q3').value = existingSub.q3 || existingSub.justification || '';
     document.getElementById('act-q4').value = existingSub.q4 || '';
+  } else {
+    feedbackAlertBox.style.display = 'none';
   }
 
   // Open Modal overlay
@@ -445,7 +452,23 @@ function initActivityForm() {
     const q4 = document.getElementById('act-q4').value.trim();
 
     try {
-      // Save submission results directly to Database
+      // 1. Fetch AI Feedback from Google Gemini Function
+      const feedbackRes = await fetch(`${API_BASE}/feedback`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          q1,
+          q2,
+          q3,
+          q4,
+          activityIndex: idx
+        })
+      });
+
+      if (!feedbackRes.ok) throw new Error('Error al llamar a la evaluación por IA');
+      const evalResult = await feedbackRes.json(); // { score, feedback }
+
+      // 2. Save submission results to Database
       const dbRes = await fetch(`${API_BASE}/database`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -458,8 +481,8 @@ function initActivityForm() {
             q2,
             q3,
             q4,
-            score: 5, // Default score for compatibility
-            feedback: "Entregado con éxito en el portafolio digital."
+            score: evalResult.score,
+            feedback: evalResult.feedback
           }
         })
       });
@@ -475,8 +498,8 @@ function initActivityForm() {
         q2,
         q3,
         q4,
-        score: 5,
-        feedback: "Entregado con éxito en el portafolio digital.",
+        score: evalResult.score,
+        feedback: evalResult.feedback,
         submitted_at: new Date().toISOString()
       };
 
