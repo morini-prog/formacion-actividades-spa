@@ -6,83 +6,65 @@ const ACTIVITIES = {
   1: {
     title: "1. Concepto y Objetivos (Págs. 2-3)",
     questions: [
-      "1) ¿Cuáles son los 5 objetivos comunes de la formación descritos en el material de estudio?",
-      "2) ¿Cuál es la diferencia teórica clave entre 'formación' y 'desarrollo' a largo plazo según el texto?",
-      "3) Según el texto, ¿por qué es clave el crecimiento a largo plazo y la asunción de roles avanzados?"
-    ],
-    application: "4) ¿Cómo podés aplicar el concepto de formación y desarrollo en tu puesto de trabajo actual o en una actividad concreta?"
+      "1) Al leer sobre los objetivos de la formación y desarrollo, ¿qué aspectos considerás que son más descuidados en los lugares de trabajo actuales? Reflexioná sobre tu propia experiencia o la de un colega.",
+      "2) ¿Cómo diferenciarías un espacio de 'formación para el puesto' de uno enfocado en el 'desarrollo a largo plazo' en tu empleo actual o en un trabajo que conozcas? Proponé un ejemplo concreto."
+    ]
   },
   2: {
     title: "2. Importancia y Retención de Talento (Págs. 3-4)",
     questions: [
-      "1) Según el reporte de LinkedIn (2020), ¿qué porcentaje de empleados se quedaría más tiempo si la empresa invierte en su desarrollo?",
-      "2) ¿Qué autor clave (1995) se cita para demostrar el impacto positivo de la capacitación en el desempeño organizacional?",
-      "3) ¿De qué manera la formación contribuye a reducir los costos de selección y mejorar la retención de talento según el material?"
-    ],
-    application: "4) ¿Cómo podés aplicar la retención de talento a través de la formación en tu trabajo o actividad laboral concreta?"
+      "1) El texto menciona que la inversión en desarrollo retiene talento. Pensando en tu trayectoria laboral o la de alguien cercano, ¿alguna vez decidiste permanecer o irte de un empleo debido a la presencia o ausencia de oportunidades de aprendizaje? Explicá esa situación.",
+      "2) ¿Cómo creés que impacta la falta de capacitación en la motivación diaria de un equipo de trabajo específico (el tuyo o uno que hayas observado)?"
+    ]
   },
   3: {
     title: "3. Diagnóstico de Necesidades - DNC (Págs. 4-5)",
     questions: [
-      "1) Además de encuestas, ¿qué otras dos herramientas específicas sugiere el texto en la Pág. 4 para recolectar información sobre brechas?",
-      "2) ¿A quiénes se debe involucrar activamente en este proceso para garantizar la validez del DNC según la Pág. 5?",
-      "3) ¿Por qué es fundamental realizar un diagnóstico de necesidades antes de diseñar cualquier programa de capacitación?"
-    ],
-    application: "4) ¿Cómo podés aplicar las técnicas de DNC en tu puesto de trabajo o en una actividad laboral concreta?"
+      "1) Si tuvieras que realizar un diagnóstico de necesidades (DNC) en tu área de trabajo o en una organización conocida, ¿cuál de las herramientas del texto (observación, registros, encuestas) considerás que sería más aceptada y efectiva entre tus compañeros, y por qué?",
+      "2) ¿Cómo involucrarías a los distintos roles (compañeros, supervisores o gerentes) para asegurar que el diagnóstico sea honesto y no se sienta como una evaluación punitiva?"
+    ]
   },
   4: {
     title: "4. Diseñando Programas - Metodología SMART (Págs. 5-6)",
     questions: [
-      "1) Redactá un objetivo comercial de capacitación para el equipo de ventas usando la metodología SMART de la Pág. 5 (explicando sus siglas).",
-      "2) ¿Qué formatos de contenido o metodologías prácticas se describen en la Pág. 6 para adaptarse a diferentes estilos?",
-      "3) ¿Cómo influye el diseño del programa en la efectividad y el compromiso del colaborador según el material?"
-    ],
-    application: "4) ¿Cómo podés formular metas SMART para tu capacitación o actividad laboral concreta?"
+      "1) Pensando en tus metas profesionales, ¿cómo podrías estructurar un objetivo personal de aprendizaje bajo los criterios SMART (Específico, Medible, Alcanzable, Relevante, Temporal)?",
+      "2) En tu trabajo actual o en uno que conozcas, ¿qué formato de capacitación (videos, lecturas, foros, mentores) se adapta mejor a tu propio estilo de aprendizaje y cómo creés que impacta en tu rendimiento diario?"
+    ]
   },
   5: {
     title: "5. El Poder de la Evaluación (Págs. 6-7)",
     questions: [
-      "1) Detallá secuencialmente los primeros 3 pasos del proceso de evaluación descritos en el material (Pág. 6-7).",
-      "2) Detallá secuencialmente los últimos 3 pasos (pasos 4, 5 y 6) del proceso de evaluación del material.",
-      "3) ¿Por qué es crítico el paso de retroalimentación en este proceso según el texto?"
-    ],
-    application: "4) ¿Cómo podés evaluar la efectividad de una actividad en tu puesto de trabajo actual o actividad concreta?"
+      "1) Al evaluar el impacto de una capacitación, el texto propone medir resultados. ¿Cómo medirías, a nivel personal, si un taller o curso que tomaste realmente valió la pena y cambió tu forma de trabajar?",
+      "2) ¿Qué mecanismos de retroalimentación (feedback) considerás que funcionan mejor en tu entorno laboral (o el de un tercero) para realizar mejoras en las tareas diarias, y cuáles generan rechazo?"
+    ]
   },
   6: {
     title: "6. Herramientas y Técnicas de Formación (Págs. 7-8)",
     questions: [
-      "1) ¿Cómo define el documento el concepto de 'microaprendizaje' (Pág. 8)?",
-      "2) ¿Cómo define el documento el concepto de 'aprendizaje colaborativo' (Pág. 8)?",
-      "3) ¿Qué técnica se describe como un 'espejo que refleja una imagen completa' recopilando feedback de colegas?"
-    ],
-    application: "4) ¿Cómo podés aplicar el microaprendizaje o aprendizaje colaborativo en tu trabajo o actividad concreta?"
+      "1) El microaprendizaje y el aprendizaje colaborativo son técnicas modernas. ¿Cómo podrías incorporar 'píldoras de aprendizaje' de forma autónoma en tu rutina laboral diaria para mantenerte actualizado sin saturar tu agenda?",
+      "2) Si en tu organización (o una que conozcas) se implementara una evaluación de 360 grados (feedback de colegas, jefes y subordinados), ¿qué miedos o beneficios creés que surgirían en la cultura del equipo?"
+    ]
   },
   7: {
     title: "7. Programas de Sucesión de Liderazgo (Págs. 8-9)",
     questions: [
-      "1) ¿Cómo define el texto a los programas de sucesión de talento ('es como un...')?",
-      "2) Una vez identificados los futuros líderes, ¿cuáles son los cuatro pasos clave de preparación que detalla la Pág. 9?",
-      "3) ¿Cuál es el beneficio estratégico de contar con un plan de sucesión estructurado para mitigar riesgos en cargos clave?"
-    ],
-    application: "4) ¿Cómo podés implementar o prepararte para un plan de sucesión en tu entorno laboral o actividad concreta?"
+      "1) Los planes de sucesión preparan a futuros líderes. Si fueras propuesto para suceder a un cargo clave en tu organización (o en un proyecto), ¿en qué habilidades blandas o técnicas sentirías que necesitás más entrenamiento o mentoría?",
+      "2) ¿Cómo impacta la falta de un plan de sucesión claro en la estabilidad y el clima de trabajo de un área específica cuando un líder clave se va? Reflexioná sobre un caso real o hipotético."
+    ]
   },
   8: {
     title: "8. Aprendizaje Organizacional y Cultura Continua (Págs. 9-10)",
     questions: [
-      "1) ¿Qué mentalidad se debe fomentar en la organización respecto a los errores para crear una cultura de aprendizaje continuo?",
-      "2) ¿Cuáles son las herramientas tecnológicas listadas en la Pág. 10 para facilitar el aprendizaje continuo?",
-      "3) ¿Cómo impacta una cultura de aprendizaje continuo en la innovación y adaptabilidad dentro de la organización?"
-    ],
-    application: "4) ¿Cómo podés fomentar una cultura de aprendizaje continuo o aplicar estas herramientas en tu trabajo?"
+      "1) Crear una cultura donde el error se vea como aprendizaje requiere confianza. ¿Cómo reacciona tu entorno laboral (o el de alguien que conozcas) ante un error operativo? ¿Fomenta el aprendizaje o el castigo? Reflexioná críticamente.",
+      "2) De las tecnologías y canales sugeridos (redes corporativas, e-learning, bases de conocimiento), ¿cuál considerás que se adaptaría mejor a tu equipo de trabajo para compartir conocimientos de forma cotidiana?"
+    ]
   },
   9: {
     title: "9. Aprendizaje Basado en Habilidades Blandas (Pág. 10)",
     questions: [
-      "1) ¿Cuáles son las 3 habilidades blandas que destaca el texto que promueve una empresa líder mundial como Google?",
-      "2) ¿Cómo se debe evaluar el progreso del desarrollo de habilidades blandas según el material?",
-      "3) ¿Por qué las habilidades blandas son tan críticas como las técnicas para el crecimiento a largo plazo del empleado?"
-    ],
-    application: "4) ¿Cómo podés desarrollar y aplicar estas habilidades blandas en tu puesto de trabajo actual o actividad concreta?"
+      "1) Habilidades como el liderazgo, la colaboración y la comunicación efectiva son clave en Google. ¿Cuál de estas tres habilidades considerás que es tu mayor fortaleza y en cuál sentís que necesitás un desarrollo intencional en tu actividad actual?",
+      "2) En tu experiencia laboral (o la de un tercero), ¿cómo afecta al trabajo en equipo y a los resultados de un proyecto el tener un compañero con excelente capacidad técnica pero serias deficiencias en habilidades blandas?"
+    ]
   }
 };
 
@@ -397,8 +379,6 @@ window.openActivity = function(activityIndex) {
   // Set Question Labels dynamically
   document.getElementById('lbl-act-q1').innerText = activityData.questions[0];
   document.getElementById('lbl-act-q2').innerText = activityData.questions[1];
-  document.getElementById('lbl-act-q3').innerText = activityData.questions[2];
-  document.getElementById('lbl-act-q4').innerText = activityData.application;
 
   // Reset form
   const form = document.getElementById('activity-form');
@@ -415,8 +395,6 @@ window.openActivity = function(activityIndex) {
     
     document.getElementById('act-q1').value = existingSub.q1 || existingSub.reflection || '';
     document.getElementById('act-q2').value = existingSub.q2 || existingSub.url || '';
-    document.getElementById('act-q3').value = existingSub.q3 || existingSub.justification || '';
-    document.getElementById('act-q4').value = existingSub.q4 || '';
   } else {
     feedbackAlertBox.style.display = 'none';
   }
@@ -448,8 +426,6 @@ function initActivityForm() {
 
     const q1 = document.getElementById('act-q1').value.trim();
     const q2 = document.getElementById('act-q2').value.trim();
-    const q3 = document.getElementById('act-q3').value.trim();
-    const q4 = document.getElementById('act-q4').value.trim();
 
     try {
       // 1. Fetch AI Feedback from Google Gemini Function
@@ -459,8 +435,6 @@ function initActivityForm() {
         body: JSON.stringify({
           q1,
           q2,
-          q3,
-          q4,
           activityIndex: idx
         })
       });
@@ -479,8 +453,6 @@ function initActivityForm() {
             activityIndex: idx,
             q1,
             q2,
-            q3,
-            q4,
             score: evalResult.score,
             feedback: evalResult.feedback
           }
@@ -496,8 +468,6 @@ function initActivityForm() {
         activityIndex: idx,
         q1,
         q2,
-        q3,
-        q4,
         score: evalResult.score,
         feedback: evalResult.feedback,
         submitted_at: new Date().toISOString()
@@ -712,7 +682,7 @@ window.viewStudentDetail = function(studentEmail) {
       actBox.innerHTML = `
         <div class="detail-act-header">
           <h4>Actividad 0${idx}: ${activityData.title}</h4>
-          <span class="score-badge">Completada</span>
+          <span class="score-badge">${sub.score}/5 pts</span>
         </div>
         <div class="detail-field">
           <span class="detail-label">${escapeHTML(activityData.questions[0])}</span>
@@ -722,13 +692,9 @@ window.viewStudentDetail = function(studentEmail) {
           <span class="detail-label">${escapeHTML(activityData.questions[1])}</span>
           <p class="detail-text">${escapeHTML(sub.q2 || sub.url || '')}</p>
         </div>
-        <div class="detail-field">
-          <span class="detail-label">${escapeHTML(activityData.questions[2])}</span>
-          <p class="detail-text">${escapeHTML(sub.q3 || sub.justification || '')}</p>
-        </div>
-        <div class="detail-field">
-          <span class="detail-label">${escapeHTML(activityData.application)}</span>
-          <p class="detail-text">${escapeHTML(sub.q4 || '')}</p>
+        <div class="detail-field" style="border-top:1px dashed var(--border-color); padding-top:0.75rem; margin-top:0.75rem;">
+          <span class="detail-label" style="color:var(--accent);">Devolución de la IA:</span>
+          <p class="detail-text" style="font-style:italic;">${escapeHTML(sub.feedback)}</p>
         </div>
       `;
     } else {
@@ -779,10 +745,10 @@ function exportDataToCSV() {
   ];
 
   for (let i = 1; i <= 9; i++) {
+    headers.push(`Act ${i} Puntaje`);
     headers.push(`Act ${i} Pregunta 1`);
     headers.push(`Act ${i} Pregunta 2`);
-    headers.push(`Act ${i} Pregunta 3`);
-    headers.push(`Act ${i} Aplicacion`);
+    headers.push(`Act ${i} Devolucion`);
   }
 
   headers.push("Puntaje Total");
@@ -801,14 +767,14 @@ function exportDataToCSV() {
     for (let idx = 1; idx <= 9; idx++) {
       const s = subs.find(sub => sub.activityIndex === idx);
       if (s) {
+        actData.push(s.score.toString());
         actData.push(s.q1 || s.reflection || "");
         actData.push(s.q2 || s.url || "");
-        actData.push(s.q3 || s.justification || "");
-        actData.push(s.q4 || "");
+        actData.push(s.feedback || "");
         totalScore += s.score;
       } else {
         // empty values
-        actData.push("", "", "", "");
+        actData.push("0", "", "", "");
       }
     }
 

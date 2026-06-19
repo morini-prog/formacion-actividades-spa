@@ -202,8 +202,6 @@ exports.handler = async (event, context) => {
         if (existingSub) {
           existingSub.q1 = submission.q1;
           existingSub.q2 = submission.q2;
-          existingSub.q3 = submission.q3;
-          existingSub.q4 = submission.q4;
           existingSub.score = Number(submission.score);
           existingSub.feedback = submission.feedback;
           existingSub.submitted_at = new Date().toISOString();
@@ -213,8 +211,6 @@ exports.handler = async (event, context) => {
             activityIndex: submission.activityIndex,
             q1: submission.q1,
             q2: submission.q2,
-            q3: submission.q3,
-            q4: submission.q4,
             score: Number(submission.score),
             feedback: submission.feedback,
             submitted_at: new Date().toISOString()
