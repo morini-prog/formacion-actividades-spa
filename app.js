@@ -5,39 +5,84 @@
 const ACTIVITIES = {
   1: {
     title: "1. Concepto y Objetivos (Págs. 2-3)",
-    instruction: "Caso: PyME comercial argentina en digitalización. Respondé: 1) ¿Cuáles son los 5 objetivos comunes de la formación descritos en el material? 2) ¿Cuál es la diferencia teórica clave entre 'formación' y 'desarrollo' a largo plazo según el texto?"
+    questions: [
+      "1) ¿Cuáles son los 5 objetivos comunes de la formación descritos en el material de estudio?",
+      "2) ¿Cuál es la diferencia teórica clave entre 'formación' y 'desarrollo' a largo plazo según el texto?",
+      "3) Según el texto, ¿por qué es clave el crecimiento a largo plazo y la asunción de roles avanzados?"
+    ],
+    application: "4) ¿Cómo podés aplicar el concepto de formación y desarrollo en tu puesto de trabajo actual o en una actividad concreta?"
   },
   2: {
     title: "2. Importancia y Retención de Talento (Págs. 3-4)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) Según el reporte de LinkedIn (2020), ¿qué porcentaje de empleados se quedaría más tiempo si la empresa invierte en su desarrollo? 2) ¿Qué autor (1995) se cita para demostrar que capacitar al personal mejora el rendimiento de la organización?"
+    questions: [
+      "1) Según el reporte de LinkedIn (2020), ¿qué porcentaje de empleados se quedaría más tiempo si la empresa invierte en su desarrollo?",
+      "2) ¿Qué autor clave (1995) se cita para demostrar el impacto positivo de la capacitación en el desempeño organizacional?",
+      "3) ¿De qué manera la formación contribuye a reducir los costos de selección y mejorar la retención de talento según el material?"
+    ],
+    application: "4) ¿Cómo podés aplicar la retención de talento a través de la formación en tu trabajo o actividad laboral concreta?"
   },
   3: {
     title: "3. Diagnóstico de Necesidades - DNC (Págs. 4-5)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) Además de encuestas/cuestionarios, ¿qué otras 2 herramientas específicas sugiere el texto en la Pág. 4 para recolectar información sobre brechas? 2) ¿A quiénes se debe involucrar activamente en este proceso para garantizar su validez?"
+    questions: [
+      "1) Además de encuestas, ¿qué otras dos herramientas específicas sugiere el texto en la Pág. 4 para recolectar información sobre brechas?",
+      "2) ¿A quiénes se debe involucrar activamente en este proceso para garantizar la validez del DNC según la Pág. 5?",
+      "3) ¿Por qué es fundamental realizar un diagnóstico de necesidades antes de diseñar cualquier programa de capacitación?"
+    ],
+    application: "4) ¿Cómo podés aplicar las técnicas de DNC en tu puesto de trabajo o en una actividad laboral concreta?"
   },
   4: {
     title: "4. Diseñando Programas - Metodología SMART (Págs. 5-6)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) Redactá un objetivo comercial de capacitación para el equipo de ventas usando la metodología SMART de la Pág. 5 (explicando sus siglas). 2) ¿Qué metodologías o formatos de contenidos prácticos menciona el texto para adaptarse a diferentes estilos?"
+    questions: [
+      "1) Redactá un objetivo comercial de capacitación para el equipo de ventas usando la metodología SMART de la Pág. 5 (explicando sus siglas).",
+      "2) ¿Qué formatos de contenido o metodologías prácticas se describen en la Pág. 6 para adaptarse a diferentes estilos?",
+      "3) ¿Cómo influye el diseño del programa en la efectividad y el compromiso del colaborador según el material?"
+    ],
+    application: "4) ¿Cómo podés formular metas SMART para tu capacitación o actividad laboral concreta?"
   },
   5: {
     title: "5. El Poder de la Evaluación (Págs. 6-7)",
-    instruction: "Caso: PyME comercial argentina. Respondé: Enumerá e implementá los 6 pasos del proceso de evaluación descritos en el material (Pág. 6-7) para medir la efectividad del plan de formación."
+    questions: [
+      "1) Detallá secuencialmente los primeros 3 pasos del proceso de evaluación descritos en el material (Pág. 6-7).",
+      "2) Detallá secuencialmente los últimos 3 pasos (pasos 4, 5 y 6) del proceso de evaluación del material.",
+      "3) ¿Por qué es crítico el paso de retroalimentación en este proceso según el texto?"
+    ],
+    application: "4) ¿Cómo podés evaluar la efectividad de una actividad en tu puesto de trabajo actual o actividad concreta?"
   },
   6: {
     title: "6. Herramientas y Técnicas de Formación (Págs. 7-8)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Cómo define el documento el 'microaprendizaje' (g) y el 'aprendizaje colaborativo' (h)? 2) ¿Qué técnica se describe como un 'espejo que refleja una imagen completa' recopilando feedback de colegas y subordinados?"
+    questions: [
+      "1) ¿Cómo define el documento el concepto de 'microaprendizaje' (Pág. 8)?",
+      "2) ¿Cómo define el documento el concepto de 'aprendizaje colaborativo' (Pág. 8)?",
+      "3) ¿Qué técnica se describe como un 'espejo que refleja una imagen completa' recopilando feedback de colegas?"
+    ],
+    application: "4) ¿Cómo podés aplicar el microaprendizaje o aprendizaje colaborativo en tu trabajo o actividad concreta?"
   },
   7: {
     title: "7. Programas de Sucesión de Liderazgo (Págs. 8-9)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Cómo define el texto a los programas de sucesión de talento ('es como un...')? 2) ¿Qué pasos de entrenamiento intensivo y mentoría se deben seguir una vez identificados los futuros líderes?"
+    questions: [
+      "1) ¿Cómo define el texto a los programas de sucesión de talento ('es como un...')?",
+      "2) Una vez identificados los futuros líderes, ¿cuáles son los cuatro pasos clave de preparación que detalla la Pág. 9?",
+      "3) ¿Cuál es el beneficio estratégico de contar con un plan de sucesión estructurado para mitigar riesgos en cargos clave?"
+    ],
+    application: "4) ¿Cómo podés implementar o prepararte para un plan de sucesión en tu entorno laboral o actividad concreta?"
   },
   8: {
     title: "8. Aprendizaje Organizacional y Cultura Continua (Págs. 9-10)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Qué mentalidad se debe fomentar en la organización respecto a los errores para crear una cultura de aprendizaje continuo? 2) ¿Qué tecnologías específicas se sugieren en la Pág. 10 para facilitarlo?"
+    questions: [
+      "1) ¿Qué mentalidad se debe fomentar en la organización respecto a los errores para crear una cultura de aprendizaje continuo?",
+      "2) ¿Cuáles son las herramientas tecnológicas listadas en la Pág. 10 para facilitar el aprendizaje continuo?",
+      "3) ¿Cómo impacta una cultura de aprendizaje continuo en la innovación y adaptabilidad dentro de la organización?"
+    ],
+    application: "4) ¿Cómo podés fomentar una cultura de aprendizaje continuo o aplicar estas herramientas en tu trabajo?"
   },
   9: {
     title: "9. Aprendizaje Basado en Habilidades Blandas (Pág. 10)",
-    instruction: "Caso: PyME comercial argentina. Respondé: 1) ¿Qué 3 habilidades blandas destaca el texto que promueve una empresa líder mundial como Google? 2) ¿Cómo se debe evaluar el progreso del desarrollo de habilidades blandas según el material?"
+    questions: [
+      "1) ¿Cuáles son las 3 habilidades blandas que destaca el texto que promueve una empresa líder mundial como Google?",
+      "2) ¿Cómo se debe evaluar el progreso del desarrollo de habilidades blandas según el material?",
+      "3) ¿Por qué las habilidades blandas son tan críticas como las técnicas para el crecimiento a largo plazo del empleado?"
+    ],
+    application: "4) ¿Cómo podés desarrollar y aplicar estas habilidades blandas en tu puesto de trabajo actual o actividad concreta?"
   }
 };
 
@@ -347,7 +392,13 @@ window.openActivity = function(activityIndex) {
   // Fill text in Modal
   document.getElementById('modal-act-num').innerText = `Actividad 0${activityIndex}`;
   document.getElementById('modal-act-title').innerText = activityData.title;
-  document.getElementById('modal-act-instruction').innerText = activityData.instruction;
+  document.getElementById('modal-act-instruction').innerText = "Leé atentamente el material teórico y respondé las siguientes preguntas de reflexión y aplicación:";
+
+  // Set Question Labels dynamically
+  document.getElementById('lbl-act-q1').innerText = activityData.questions[0];
+  document.getElementById('lbl-act-q2').innerText = activityData.questions[1];
+  document.getElementById('lbl-act-q3').innerText = activityData.questions[2];
+  document.getElementById('lbl-act-q4').innerText = activityData.application;
 
   // Reset form
   const form = document.getElementById('activity-form');
@@ -357,9 +408,10 @@ window.openActivity = function(activityIndex) {
   const existingSub = state.submissions.find(s => s.activityIndex === activityIndex);
   
   if (existingSub) {
-    document.getElementById('act-reflection').value = existingSub.reflection;
-    document.getElementById('act-url').value = existingSub.url;
-    document.getElementById('act-justification').value = existingSub.justification;
+    document.getElementById('act-q1').value = existingSub.q1 || existingSub.reflection || '';
+    document.getElementById('act-q2').value = existingSub.q2 || existingSub.url || '';
+    document.getElementById('act-q3').value = existingSub.q3 || existingSub.justification || '';
+    document.getElementById('act-q4').value = existingSub.q4 || '';
   }
 
   // Open Modal overlay
@@ -387,9 +439,10 @@ function initActivityForm() {
     btnText.style.display = 'none';
     loader.style.display = 'inline-flex';
 
-    const reflection = document.getElementById('act-reflection').value.trim();
-    const url = document.getElementById('act-url').value.trim();
-    const justification = document.getElementById('act-justification').value.trim();
+    const q1 = document.getElementById('act-q1').value.trim();
+    const q2 = document.getElementById('act-q2').value.trim();
+    const q3 = document.getElementById('act-q3').value.trim();
+    const q4 = document.getElementById('act-q4').value.trim();
 
     try {
       // Save submission results directly to Database
@@ -401,9 +454,10 @@ function initActivityForm() {
           student_email: state.currentStudent.email,
           submission: {
             activityIndex: idx,
-            reflection,
-            url,
-            justification,
+            q1,
+            q2,
+            q3,
+            q4,
             score: 5, // Default score for compatibility
             feedback: "Entregado con éxito en el portafolio digital."
           }
@@ -417,9 +471,10 @@ function initActivityForm() {
       const newSubData = {
         student_email: state.currentStudent.email,
         activityIndex: idx,
-        reflection,
-        url,
-        justification,
+        q1,
+        q2,
+        q3,
+        q4,
         score: 5,
         feedback: "Entregado con éxito en el portafolio digital.",
         submitted_at: new Date().toISOString()
@@ -634,23 +689,23 @@ window.viewStudentDetail = function(studentEmail) {
       actBox.innerHTML = `
         <div class="detail-act-header">
           <h4>Actividad 0${idx}: ${activityData.title}</h4>
-          <span class="score-badge">${sub.score}/5 pts</span>
+          <span class="score-badge">Completada</span>
         </div>
         <div class="detail-field">
-          <span class="detail-label">Reflexión y Análisis:</span>
-          <p class="detail-text">${escapeHTML(sub.reflection)}</p>
+          <span class="detail-label">${escapeHTML(activityData.questions[0])}</span>
+          <p class="detail-text">${escapeHTML(sub.q1 || sub.reflection || '')}</p>
         </div>
         <div class="detail-field">
-          <span class="detail-label">Recurso de Investigación:</span>
-          <p class="detail-text"><a href="${escapeHTML(sub.url)}" target="_blank">${escapeHTML(sub.url)} <i class="fa-solid fa-up-right-from-square"></i></a></p>
+          <span class="detail-label">${escapeHTML(activityData.questions[1])}</span>
+          <p class="detail-text">${escapeHTML(sub.q2 || sub.url || '')}</p>
         </div>
         <div class="detail-field">
-          <span class="detail-label">Justificación del Recurso:</span>
-          <p class="detail-text">${escapeHTML(sub.justification)}</p>
+          <span class="detail-label">${escapeHTML(activityData.questions[2])}</span>
+          <p class="detail-text">${escapeHTML(sub.q3 || sub.justification || '')}</p>
         </div>
-        <div class="detail-field" style="border-top:1px dashed var(--border-color); padding-top:0.75rem; margin-top:0.75rem;">
-          <span class="detail-label" style="color:var(--accent);">Feedback de la IA:</span>
-          <p class="detail-text" style="font-style:italic;">${escapeHTML(sub.feedback)}</p>
+        <div class="detail-field">
+          <span class="detail-label">${escapeHTML(activityData.application)}</span>
+          <p class="detail-text">${escapeHTML(sub.q4 || '')}</p>
         </div>
       `;
     } else {
@@ -701,11 +756,10 @@ function exportDataToCSV() {
   ];
 
   for (let i = 1; i <= 9; i++) {
-    headers.push(`Act ${i} Puntaje`);
-    headers.push(`Act ${i} Reflexion`);
-    headers.push(`Act ${i} URL`);
-    headers.push(`Act ${i} Justificacion`);
-    headers.push(`Act ${i} Feedback`);
+    headers.push(`Act ${i} Pregunta 1`);
+    headers.push(`Act ${i} Pregunta 2`);
+    headers.push(`Act ${i} Pregunta 3`);
+    headers.push(`Act ${i} Aplicacion`);
   }
 
   headers.push("Puntaje Total");
@@ -724,15 +778,14 @@ function exportDataToCSV() {
     for (let idx = 1; idx <= 9; idx++) {
       const s = subs.find(sub => sub.activityIndex === idx);
       if (s) {
-        actData.push(s.score.toString());
-        actData.push(s.reflection);
-        actData.push(s.url);
-        actData.push(s.justification);
-        actData.push(s.feedback);
+        actData.push(s.q1 || s.reflection || "");
+        actData.push(s.q2 || s.url || "");
+        actData.push(s.q3 || s.justification || "");
+        actData.push(s.q4 || "");
         totalScore += s.score;
       } else {
         // empty values
-        actData.push("0", "", "", "", "");
+        actData.push("", "", "", "");
       }
     }
 
