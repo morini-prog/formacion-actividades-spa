@@ -4,16 +4,16 @@
 
 const ACTIVITIES = {
   1: {
-    title: "Diagnóstico de Necesidades de Capacitación (DNC)",
-    instruction: "Identificá las brechas de competencias de un sector de tu elección y analizá de qué manera un plan de formación puede resolverlas. Investigá herramientas digitales y metodologías para recabar estas necesidades (por ejemplo, encuestas, entrevistas o evaluaciones de desempeño)."
+    title: "DNC y Criterio de Retorno Inversión (Págs. 3-5)",
+    instruction: "Caso: PyME comercial argentina con alta rotación y resistencia al cambio en el proceso de digitalización. Diseñá el proceso de DNC proponiendo al menos DOS herramientas del material (encuestas, cuestionarios, observación directa, registros de desempeño) y cómo involucrarás activamente al personal (Pág. 5). Además, debés justificar teóricamente la inversión en capacitación citando formalmente a HUSELID (1995) o el informe de LINKEDIN (2020) sobre la retención de talento (Pág. 3)."
   },
   2: {
-    title: "Diseño y Formulación del Plan de Capacitación",
-    instruction: "Establecé el diseño pedagógico del programa. Redactá los objetivos de aprendizaje, elegí la modalidad (presencial, e-learning o blended/combinada) y describí los recursos y materiales de apoyo necesarios. Asegurá que tu propuesta responda a los hallazgos del DNC."
+    title: "Planificación Pedagógica, Habilidades Blandas y Metodologías (Págs. 5-8, 10)",
+    instruction: "Para la PyME comercial, redactá un objetivo de capacitación comercial para el equipo utilizando estrictamente la metodología SMART (Pág. 5). Luego, diseñá la estrategia pedagógica combinando al menos DOS metodologías del material (Pág. 7-8) y detallando cómo desarrollarás las habilidades blandas basándote en el enfoque implementado por GOOGLE (Pág. 10)."
   },
   3: {
-    title: "Evaluación del Retorno y Transferencia",
-    instruction: "Elaborá la estrategia para evaluar el impacto de la capacitación en el puesto de trabajo y en los resultados del negocio. Utilizá los niveles del Modelo de Kirkpatrick (especialmente Nivel 3 de Comportamiento y Nivel 4 de Resultados) y definí los indicadores clave (KPIs)."
+    title: "Proceso de Evaluación e Innovación Cultural (Págs. 6-7, 9)",
+    instruction: "Estructurá el plan de evaluación del programa de capacitación de la PyME comercial. Debés seguir y fundamentar los SEIS pasos clave descritos en la Pág. 6-7 del material (establecer criterios, recolectar datos, buscar insights, interpretar resultados, ajustar y retroalimentar). Finalmente, proponé cómo construirás una cultura de aprendizaje continuo basada en la experimentación y la tolerancia al error (Pág. 9)."
   }
 };
 
