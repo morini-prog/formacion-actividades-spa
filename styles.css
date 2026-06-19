@@ -1315,7 +1315,7 @@ body.dark-theme .app-header {
 
 .cert-signatures {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: flex-end;
   width: 100%;
   margin-top: 1rem;
