@@ -6,64 +6,64 @@ const ACTIVITIES = {
   1: {
     title: "1. Concepto y Objetivos (Págs. 2-3)",
     questions: [
-      "1) Al leer sobre los objetivos de la formación y desarrollo, ¿qué aspectos considerás que son más descuidados en los lugares de trabajo actuales? Reflexioná sobre tu propia experiencia o la de un colega.",
-      "2) ¿Cómo diferenciarías un espacio de 'formación para el puesto' de uno enfocado en el 'desarrollo a largo plazo' en tu empleo actual o en un trabajo que conozcas? Proponé un ejemplo concreto."
+      "1) Según el texto (Págs. 2-3), ¿cuáles son los 5 objetivos comunes de la formación y cuál es la diferencia clave entre 'formación' y 'desarrollo' a largo plazo?",
+      "2) De estos objetivos, ¿cuál considerás que es el más descuidado en tu puesto actual (o en el de un colega) y qué importancia le asignás a que se trabaje activamente en la empresa?"
     ]
   },
   2: {
     title: "2. Importancia y Retención de Talento (Págs. 3-4)",
     questions: [
-      "1) El texto menciona que la inversión en desarrollo retiene talento. Pensando en tu trayectoria laboral o la de alguien cercano, ¿alguna vez decidiste permanecer o irte de un empleo debido a la presencia o ausencia de oportunidades de aprendizaje? Explicá esa situación.",
-      "2) ¿Cómo creés que impacta la falta de capacitación en la motivación diaria de un equipo de trabajo específico (el tuyo o uno que hayas observado)?"
+      "1) Citando el texto (Págs. 3-4), ¿qué porcentaje de empleados retendría una empresa según el reporte de LinkedIn (2020) y a qué autor se cita para demostrar el impacto en el rendimiento organizacional?",
+      "2) Pensando en tu experiencia (o la de alguien cercano), ¿alguna vez decidiste permanecer o irte de un empleo debido a la presencia o ausencia de planes de capacitación? Explicá los motivos."
     ]
   },
   3: {
     title: "3. Diagnóstico de Necesidades - DNC (Págs. 4-5)",
     questions: [
-      "1) Si tuvieras que realizar un diagnóstico de necesidades (DNC) en tu área de trabajo o en una organización conocida, ¿cuál de las herramientas del texto (observación, registros, encuestas) considerás que sería más aceptada y efectiva entre tus compañeros, y por qué?",
-      "2) ¿Cómo involucrarías a los distintos roles (compañeros, supervisores o gerentes) para asegurar que el diagnóstico sea honesto y no se sienta como una evaluación punitiva?"
+      "1) De acuerdo con la Pág. 4, además de encuestas, ¿qué otras dos herramientas específicas se describen para realizar un Diagnóstico de Necesidades de Capacitación (DNC)?",
+      "2) Si tuvieras que hacer un DNC en tu área de trabajo, ¿cuál de estas herramientas creés que sería la más aceptada por tus compañeros para evitar que se sienta como una evaluación punitiva?"
     ]
   },
   4: {
     title: "4. Diseñando Programas - Metodología SMART (Págs. 5-6)",
     questions: [
-      "1) Pensando en tus metas profesionales, ¿cómo podrías estructurar un objetivo personal de aprendizaje bajo los criterios SMART (Específico, Medible, Alcanzable, Relevante, Temporal)?",
-      "2) En tu trabajo actual o en uno que conozcas, ¿qué formato de capacitación (videos, lecturas, foros, mentores) se adapta mejor a tu propio estilo de aprendizaje y cómo creés que impacta en tu rendimiento diario?"
+      "1) Según la Pág. 5 del material, ¿cuáles son los criterios de la metodología SMART para diseñar objetivos de capacitación y qué formatos prácticos de contenido menciona la Pág. 6?",
+      "2) Redactá un objetivo de capacitación para tu puesto de trabajo actual (o para un rol conocido) usando el formato SMART y explicá por qué considerás importante medirlo."
     ]
   },
   5: {
     title: "5. El Poder de la Evaluación (Págs. 6-7)",
     questions: [
-      "1) Al evaluar el impacto de una capacitación, el texto propone medir resultados. ¿Cómo medirías, a nivel personal, si un taller o curso que tomaste realmente valió la pena y cambió tu forma de trabajar?",
-      "2) ¿Qué mecanismos de retroalimentación (feedback) considerás que funcionan mejor en tu entorno laboral (o el de un tercero) para realizar mejoras en las tareas diarias, y cuáles generan rechazo?"
+      "1) Detallá secuencialmente los 6 pasos descritos en el material (Págs. 6-7) para llevar a cabo una evaluación de efectividad de la formación.",
+      "2) ¿Cómo reacciona tu entorno laboral (o el de un tercero) ante las evaluaciones de desempeño? ¿Considerás que se da un feedback constructivo y útil para tu día a día, o genera rechazo?"
     ]
   },
   6: {
     title: "6. Herramientas y Técnicas de Formación (Págs. 7-8)",
     questions: [
-      "1) El microaprendizaje y el aprendizaje colaborativo son técnicas modernas. ¿Cómo podrías incorporar 'píldoras de aprendizaje' de forma autónoma en tu rutina laboral diaria para mantenerte actualizado sin saturar tu agenda?",
-      "2) Si en tu organización (o una que conozcas) se implementara una evaluación de 360 grados (feedback de colegas, jefes y subordinados), ¿qué miedos o beneficios creés que surgirían en la cultura del equipo?"
+      "1) Definí conceptualmente 'microaprendizaje' y 'aprendizaje colaborativo' basándote en la Pág. 8 del texto, e identificá a qué técnica se refiere como 'un espejo'.",
+      "2) ¿Cómo podrías incorporar 'píldoras de microaprendizaje' de manera autónoma en tu rutina diaria, y qué valor creés que aportaría a tu desarrollo profesional?"
     ]
   },
   7: {
     title: "7. Programas de Sucesión de Liderazgo (Págs. 8-9)",
     questions: [
-      "1) Los planes de sucesión preparan a futuros líderes. Si fueras propuesto para suceder a un cargo clave en tu organización (o en un proyecto), ¿en qué habilidades blandas o técnicas sentirías que necesitás más entrenamiento o mentoría?",
-      "2) ¿Cómo impacta la falta de un plan de sucesión claro en la estabilidad y el clima de trabajo de un área específica cuando un líder clave se va? Reflexioná sobre un caso real o hipotético."
+      "1) ¿Cómo define el documento a los programas de sucesión de talento (Pág. 8) y cuáles son los 4 pasos prácticos detallados en la Pág. 9 para preparar a los futuros líderes?",
+      "2) En tu experiencia u opinión, ¿como afecta al clima laboral y al equipo cuando no existe un plan de sucesión claro y un líder clave renuncia o es promovido?"
     ]
   },
   8: {
     title: "8. Aprendizaje Organizacional y Cultura Continua (Págs. 9-10)",
     questions: [
-      "1) Crear una cultura donde el error se vea como aprendizaje requiere confianza. ¿Cómo reacciona tu entorno laboral (o el de alguien que conozcas) ante un error operativo? ¿Fomenta el aprendizaje o el castigo? Reflexioná críticamente.",
-      "2) De las tecnologías y canales sugeridos (redes corporativas, e-learning, bases de conocimiento), ¿cuál considerás que se adaptaría mejor a tu equipo de trabajo para compartir conocimientos de forma cotidiana?"
+      "1) ¿Qué mentalidad sugiere fomentar el texto respecto a los errores operativos (Pág. 9) y qué herramientas tecnológicas se listan en la Pág. 10 para apoyar esta cultura?",
+      "2) ¿Cómo responde tu jefe o equipo de trabajo ante un error o equivocación en las tareas diarias? ¿Se fomenta el aprendizaje o predomina el castigo y la culpa?"
     ]
   },
   9: {
     title: "9. Aprendizaje Basado en Habilidades Blandas (Pág. 10)",
     questions: [
-      "1) Habilidades como el liderazgo, la colaboración y la comunicación efectiva son clave en Google. ¿Cuál de estas tres habilidades considerás que es tu mayor fortaleza y en cuál sentís que necesitás un desarrollo intencional en tu actividad actual?",
-      "2) En tu experiencia laboral (o la de un tercero), ¿cómo afecta al trabajo en equipo y a los resultados de un proyecto el tener un compañero con excelente capacidad técnica pero serias deficiencias en habilidades blandas?"
+      "1) ¿Cuáles son las 3 habilidades blandas que destaca el texto que promueve Google (Pág. 10) y qué métodos se detallan para evaluar su progreso?",
+      "2) Entre el liderazgo, la colaboración y la comunicación efectiva, ¿cuál es tu mayor fortaleza personal y en cuál sentís que necesitás capacitarte más para tu puesto actual?"
     ]
   }
 };
@@ -349,8 +349,8 @@ function renderStudentDashboard() {
     
     // Fill in certificate information
     document.getElementById('cert-student-name').innerText = fullName;
-    document.getElementById('cert-score').innerText = `${totalScoreSum} / 45 Puntos`;
-    document.getElementById('cert-badge').innerText = badgeInfo.name;
+    document.getElementById('cert-score').innerText = "9 / 9 Actividades";
+    document.getElementById('cert-badge').innerText = "Calificación pendiente";
     
     // Format current date in Argentine Spanish
     const options = { day: 'numeric', month: 'long', year: 'numeric' };

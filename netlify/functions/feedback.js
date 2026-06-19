@@ -42,76 +42,51 @@ exports.handler = async (event, context) => {
         headers,
         body: JSON.stringify({
           score: mockScore,
-          feedback: `[MODO MOCK - Sin API Key] Evaluamos tus respuestas de reflexión de la Actividad ${activityIndex}. Has realizado una excelente conexión personal con el tema y tu análisis laboral es muy atinado.`,
+          feedback: `[MODO MOCK - Sin API Key] Evaluamos tus respuestas de la Actividad N° ${activityIndex}. Tu respuesta teórica (P1) demuestra conocimiento de los conceptos del material de estudio y tu reflexión práctica (P2) aporta una conexión real valiosa con el puesto.`,
           isMock: true
         })
       };
     }
 
     // Build standard prompt for Gemini
-    const prompt = `Actuás como un docente evaluador de nivel de posgrado / senior para el módulo de "Formación y Desarrollo de Empleados". Evaluás la entrega de la Actividad N° ${activityIndex}.
-Tu tono debe ser sumamente profesional, constructivo, exigente y reflexivo, utilizando español rioplatense (argentino) formal (usando vos y conjugaciones como "debés", "tené en cuenta", "analizás").
+    const prompt = `Actuás como un docente evaluador sumamente exigente, riguroso y formal para el módulo "Formación y Desarrollo de Empleados". Evaluás la entrega de la Actividad N° ${activityIndex}.
+Tu tono debe ser profesional, constructivo, formal y exigente, utilizando español rioplatense (argentino) formal (usando vos y conjugaciones como "debés", "tené en cuenta", "analizás").
 
-ESTRUCTURA DE PREGUNTAS POR ACTIVIDAD (ENFOQUE EN REFLEXIÓN PERSONAL Y CONEXIÓN LABORAL):
-El estudiante ha respondido dos preguntas diseñadas para vincular la teoría del módulo con su propia reflexión personal y su conexión con su trabajo actual o el de otra persona:
+ESTRUCTURA DE EVALUACIÓN:
+El estudiante ha respondido a exactamente 2 preguntas:
+- La Pregunta 1 (P1) requiere explicar conceptos específicos basándose estrictamente en lo que describe el texto de estudio para el módulo respectivo. Debe ser evaluada con rigurosidad de acuerdo a la teoría del apunte.
+- La Pregunta 2 (P2) requiere una reflexión personal y conexión con su experiencia laboral (propia o de alguien) o un análisis de la importancia de ese item según su parecer. Debe ser evaluada con respecto a la honestidad, profundidad y análisis crítico.
 
-- ACTIVIDAD 1 (Concepto y Objetivos):
-  * Pregunta 1: Aspectos más descuidados en los lugares de trabajo actuales respecto a los objetivos de formación y desarrollo (experiencia propia o de un colega).
-  * Pregunta 2: Diferencia práctica entre espacio de "formación para el puesto" y de "desarrollo a largo plazo" aplicada a su empleo actual o conocido, con ejemplo concreto.
+CRITERIOS CONCEPTUALES DEL TEXTO PARA LA PREGUNTA 1 (P1) POR ACTIVIDAD:
+- ACTIVIDAD 1 (Concepto y Objetivos): P1 debe enumerar al menos 3 de los 5 objetivos (Mejorar desempeño, Incrementar satisfacción/motivación, Reducir rotación, Atraer/retener, Adaptarse a cambios) y explicar la diferencia: formación = centrado en puesto actual, desarrollo = crecimiento a largo plazo y asunción de roles avanzados.
+- ACTIVIDAD 2 (Importancia y Retención): P1 debe citar la estadística del reporte de LinkedIn (2020) que es el 94% de retención de empleados, y mencionar formalmente el autor HUSELID (1995) respecto al impacto de capacitar en el desempeño organizacional.
+- ACTIVIDAD 3 (DNC): P1 debe detallar al menos dos herramientas específicas descritas en la Pág. 4 en adición a las encuestas: observación directa en el trabajo y revisión de registros de desempeño.
+- ACTIVIDAD 4 (Diseño SMART): P1 debe detallar qué implican las siglas de la metodología SMART en español (Específico, Medible, Alcanzable, Relevante, Temporal o Limitado en el tiempo) y nombrar formatos prácticos de contenido de la Pág. 6.
+- ACTIVIDAD 5 (Evaluación): P1 debe detallar secuencialmente los 6 pasos descritos en el material (1. Establecer criterios, 2. Recopilar datos valiosos, 3. Analizar datos/insights, 4. Interpretar resultados, 5. Ajustes y mejoras, 6. Retroalimentación clara).
+- ACTIVIDAD 6 (Herramientas y Técnicas): P1 debe definir conceptualmente el "microaprendizaje" (píldoras cortas) y el "aprendizaje colaborativo" (foros, dinámicas de grupo) según la Pág. 8, e identificar la evaluación de 360 grados como la técnica del "espejo".
+- ACTIVIDAD 7 (Sucesión): P1 debe definir programas de sucesión como un "semillero de futuros líderes" (Pág. 8) y nombrar los 4 pasos prácticos: entrenamiento intensivo, proyectos desafiantes, mentorías y rotación de áreas (Pág. 9).
+- ACTIVIDAD 8 (Aprendizaje Organizacional): P1 debe detallar que se debe fomentar una mentalidad de experimentar y aprender de los errores sin temor a castigos (Pág. 9) y listar herramientas tecnológicas de la Pág. 10 (plataformas e-learning, videos tutoriales, podcasts, bases de conocimiento, redes sociales corporativas).
+- ACTIVIDAD 9 (Habilidades Blandas): P1 debe detallar las 3 habilidades que promueve Google (liderazgo, colaboración y comunicación efectiva) y explicar que su progreso se evalúa mediante observaciones, autoevaluaciones y feedback de colegas.
 
-- ACTIVIDAD 2 (Importancia y Retención):
-  * Pregunta 1: Relato sobre si permaneció o se fue de un empleo debido a la presencia o ausencia de oportunidades de aprendizaje en su trayectoria laboral o la de alguien cercano.
-  * Pregunta 2: Impacto de la falta de capacitación en la motivación diaria de un equipo de trabajo (el propio o uno observado).
+Respuestas entregadas por el alumno:
+- Respuesta Pregunta 1 (Concepto del texto): "${q1.replace(/"/g, '\\"')}"
+- Respuesta Pregunta 2 (Reflexión personal / Conexión laboral / Importancia): "${q2.replace(/"/g, '\\"')}"
 
-- ACTIVIDAD 3 (DNC):
-  * Pregunta 1: Cuál de las herramientas de DNC (observación, registros, encuestas) considerás que sería más aceptada y efectiva en su entorno, y por qué.
-  * Pregunta 2: Cómo involucraría a distintos roles (compañeros, supervisores, gerentes) para un diagnóstico honesto y no punitivo.
+RÚBRICA DE EVALUACIÓN Y CALIFICACIÓN (1 a 5 puntos):
+- 1 a 2 puntos: Respuestas extremadamente superficiales, vagas, incompletas, o que omiten las definiciones teóricas y autores exigidos en la Pregunta 1.
+- 3 puntos: Responde a ambas preguntas. La P1 describe los conceptos del texto pero tiene omisiones teóricas o citas incompletas. La P2 es meramente descriptiva sin análisis crítico sobre la importancia o experiencia.
+- 4 puntos: Responde de forma muy buena. La P1 es conceptualmente correcta y precisa respecto al material de estudio, y la P2 presenta una reflexión honesta con ejemplos del trabajo (propio o de un colega) y argumenta bien su postura.
+- 5 puntos: Excelente entrega. Demuestra lectura profunda y precisa del texto en la P1 (citas exactas, pasos o estadísticas correctas), y una notable madurez reflexiva en la P2 con aportes críticos sobre la importancia de la temática y la dinámica laboral.
 
-- ACTIVIDAD 4 (Diseño SMART):
-  * Pregunta 1: Estructuración de un objetivo personal de aprendizaje bajo criterios SMART (Específico, Medible, Alcanzable, Relevante, Temporal) para sus metas profesionales.
-  * Pregunta 2: Formato de capacitación que mejor se adapta a su propio estilo de aprendizaje y cómo cree que impacta en su rendimiento diario.
-
-- ACTIVIDAD 5 (Evaluación):
-  * Pregunta 1: Cómo mediría, a nivel personal, si un taller o curso que tomó realmente valió la pena y cambió su forma de trabajar.
-  * Pregunta 2: Mecanismos de retroalimentación (feedback) que funcionan mejor en su entorno laboral para realizar mejoras, y cuáles generan rechazo.
-
-- ACTIVIDAD 6 (Herramientas y Técnicas):
-  * Pregunta 1: Cómo podría incorporar "píldoras de aprendizaje" de forma autónoma en su rutina laboral diaria para mantenerse actualizado sin saturarse.
-  * Pregunta 2: Miedos o beneficios que surgirían si en su equipo se implementara una evaluación de 360 grados.
-
-- ACTIVIDAD 7 (Sucesión):
-  * Pregunta 1: En qué habilidades blandas o técnicas sentiría que necesita más entrenamiento o mentoría si fuera propuesto para suceder a un cargo clave.
-  * Pregunta 2: Cómo impacta la falta de un plan de sucesión claro en la estabilidad y clima de trabajo de un área específica cuando se va un líder clave (caso real o hipotético).
-
-- ACTIVIDAD 8 (Aprendizaje Continuo):
-  * Pregunta 1: Cómo reacciona su entorno laboral ante un error operativo. ¿Fomenta el aprendizaje o el castigo? Reflexión crítica.
-  * Pregunta 2: Cuál de las tecnologías/canales sugeridos (redes corporativas, e-learning, bases de conocimiento) se adaptaría mejor a su equipo para compartir conocimiento cotidiano.
-
-- ACTIVIDAD 9 (Habilidades Blandas):
-  * Pregunta 1: Cuál de las 3 habilidades (liderazgo, colaboración, comunicación efectiva) es su mayor fortaleza y en cuál necesita desarrollo intencional.
-  * Pregunta 2: Cómo afecta al equipo tener un compañero con excelente capacidad técnica pero serias deficiencias en habilidades blandas (caso real o hipotético).
-
-Respuestas del alumno para evaluar:
-- Respuesta Pregunta 1: "${q1.replace(/"/g, '\\"')}"
-- Respuesta Pregunta 2: "${q2.replace(/"/g, '\\"')}"
-
-CRITERIO DE EVALUACIÓN Y CALIFICACIÓN (1 a 5 puntos):
-No busques respuestas de memoria o literales del texto. Evaluá la profundidad, honestidad, autocrítica y conexión real del estudiante con el mundo del trabajo.
-
-- 1 a 2 puntos: Respuestas extremadamente superficiales, vagas, de uno o dos renglones, o respuestas genéricas que no muestran reflexión personal ni dan detalles o ejemplos de un entorno laboral real.
-- 3 puntos: El alumno responde ambas preguntas y describe su entorno, pero de forma descriptiva o superficial, sin un análisis crítico profundo del impacto en las personas o la organización.
-- 4 puntos: Muestra un análisis crítico muy bueno. Conecta claramente los conceptos teóricos con su experiencia laboral (o de un colega), aportando ejemplos bien argumentados sobre aciertos, miedos o dinámicas de trabajo.
-- 5 puntos: Trabajo excelente. La reflexión es profunda, honesta, demuestra una autocrítica valiosa y un entendimiento maduro de cómo las personas y los procesos se interconectan en el ámbito laboral. Aporta ejemplos ricos en contexto de su trabajo o de terceros.
-
-Debés estructurar tu feedback explicando al estudiante:
-1. En qué acertó o qué puntos de su reflexión personal son los más valiosos y rescatables.
-2. En qué erró, qué quedó incompleto o qué aspectos podría haber profundizado más en su análisis laboral o autocrítico.
-3. El motivo detallado de la calificación final asignada de acuerdo a su nivel de profundidad y argumentación.
+Debés estructurar tu feedback detallando al alumno:
+1. En qué acertó en su respuesta conceptual del texto (P1) y qué puntos valiosos aportó en su reflexión personal/laboral (P2).
+2. En qué erró o qué quedó incompleto (qué conceptos teóricos del apunte faltaron en P1, o qué faltó desarrollar en la reflexión personal de P2).
+3. Cómo influyeron estos aciertos y omisiones en la nota final (escala de 1 a 5), justificando la calificación de forma constructiva pero exigente.
 
 Responde EXCLUSIVAMENTE con un objeto JSON válido (sin caracteres de escape de markdown ni explicaciones externas), respetando esta estructura:
 {
   "score": <número entero entre 1 y 5>,
-  "feedback": "<evaluación docente detallada en español rioplatense explicando los aciertos reflexivos, las áreas de mejora y cómo se determinó la nota>"
+  "feedback": "<evaluación docente detallada en español rioplatense explicando aciertos, errores de la teoría en P1, nivel de profundidad de P2 y su impacto en la calificación>"
 }`;
 
     const requestBody = JSON.stringify({
