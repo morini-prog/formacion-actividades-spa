@@ -356,23 +356,10 @@ window.openActivity = function(activityIndex) {
   // Check if student already submitted this
   const existingSub = state.submissions.find(s => s.activityIndex === activityIndex);
   
-  const feedbackPlaceholder = document.getElementById('feedback-placeholder');
-  const feedbackContent = document.getElementById('feedback-content');
-
   if (existingSub) {
     document.getElementById('act-reflection').value = existingSub.reflection;
     document.getElementById('act-url').value = existingSub.url;
     document.getElementById('act-justification').value = existingSub.justification;
-
-    // Display existing feedback
-    feedbackPlaceholder.style.display = 'none';
-    feedbackContent.style.display = 'flex';
-    document.getElementById('feedback-score-display').innerText = existingSub.score;
-    document.getElementById('feedback-text-display').innerText = existingSub.feedback;
-  } else {
-    // Show empty placeholder
-    feedbackPlaceholder.style.display = 'flex';
-    feedbackContent.style.display = 'none';
   }
 
   // Open Modal overlay
@@ -405,22 +392,7 @@ function initActivityForm() {
     const justification = document.getElementById('act-justification').value.trim();
 
     try {
-      // 1. Fetch AI Feedback from Google Gemini Function
-      const feedbackRes = await fetch(`${API_BASE}/feedback`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          reflection,
-          url,
-          justification,
-          activityIndex: idx
-        })
-      });
-
-      if (!feedbackRes.ok) throw new Error('Error al llamar a la evaluación por IA');
-      const evalResult = await feedbackRes.json(); // { score, feedback }
-
-      // 2. Save submission results to Database
+      // Save submission results directly to Database
       const dbRes = await fetch(`${API_BASE}/database`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -432,8 +404,8 @@ function initActivityForm() {
             reflection,
             url,
             justification,
-            score: evalResult.score,
-            feedback: evalResult.feedback
+            score: 5, // Default score for compatibility
+            feedback: "Entregado con éxito en el portafolio digital."
           }
         })
       });
@@ -448,8 +420,8 @@ function initActivityForm() {
         reflection,
         url,
         justification,
-        score: evalResult.score,
-        feedback: evalResult.feedback,
+        score: 5,
+        feedback: "Entregado con éxito en el portafolio digital.",
         submitted_at: new Date().toISOString()
       };
 
@@ -459,14 +431,11 @@ function initActivityForm() {
         state.submissions.push(newSubData);
       }
 
-      // Render new evaluation in sidebar
-      document.getElementById('feedback-placeholder').style.display = 'none';
-      document.getElementById('feedback-content').style.display = 'flex';
-      document.getElementById('feedback-score-display').innerText = evalResult.score;
-      document.getElementById('feedback-text-display').innerText = evalResult.feedback;
-
       // Refresh Student dashboard stats
       renderStudentDashboard();
+      
+      // Close Modal immediately
+      closeActivity();
       
     } catch (err) {
       console.error(err);

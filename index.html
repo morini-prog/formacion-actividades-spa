@@ -110,31 +110,31 @@
       <section id="value" class="value-block">
         <div class="value-text">
           <span class="section-tag">Innovación Pedagógica</span>
-          <h3 class="section-title">Evaluación Educativa Potenciada por Gemini AI</h3>
-          <p class="value-description">Nuestra plataforma cuenta con un docente evaluador virtual programado con la API de Google Gemini. Cada entrega es auditada con total rigor en base a la rúbrica teórica del módulo, ofreciéndote retroalimentación rioplatense inmediata y constructiva.</p>
+          <h3 class="section-title">Registro de Aprendizaje y Portafolio Digital</h3>
+          <p class="value-description">Nuestra plataforma permite consolidar de forma estructurada tus análisis prácticos, recursos investigados en la web y la fundamentación teórica de cada decisión. Construí un portafolio de evidencias digitales para el seguimiento de tu crecimiento profesional.</p>
           
           <ul class="value-checklist">
-            <li><i class="fa-solid fa-circle-check"></i> Corrección formal en menos de 5 segundos.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Validación estricta de autores y citas teóricas.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Gamificación con insignias académicas digitales.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Estructuración formal de análisis y enlaces de valor.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Portafolio digital consolidado para revisión del docente.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Gamificación mediante insignias basadas en tu progreso.</li>
           </ul>
         </div>
         
         <div class="value-visual">
           <div class="value-mock-card">
             <div class="mock-card-header">
-              <span class="mock-avatar">IA</span>
+              <span class="mock-avatar">PE</span>
               <div>
-                <h5>Tutor virtual PRO-TALENT</h5>
-                <span>Evaluación de Actividad N° 1</span>
+                <h5>Portafolio del Estudiante</h5>
+                <span>Actividad N° 1 Entregada</span>
               </div>
-              <span class="mock-score-pill">5 / 5 Puntos</span>
+              <span class="mock-score-pill" style="background-color: var(--accent-light); color: var(--accent);">Completado</span>
             </div>
             <div class="mock-card-body">
-              <p>"¡Excelente análisis, Juan! Lograste incorporar de manera muy clara la observación directa como herramienta de DNC. Tu justificación basada en Huselid (1995) demuestra cómo las prácticas de alto rendimiento reducen la rotación en PyMEs. ¡Impecable!"</p>
+              <p>"Análisis de brechas DNC y justificación teórica basada en Huselid (1995), demostrando cómo los sistemas de trabajo de alto rendimiento reducen la rotación."</p>
             </div>
             <div class="mock-card-footer">
-              <span class="badge-status-tag">Líder de Aprendizaje 👑</span>
+              <span class="badge-status-tag">Aprendiz de Formación 🛡️</span>
             </div>
           </div>
         </div>
@@ -184,8 +184,8 @@
         </div>
         <div class="student-stats">
           <div class="stat-box">
-            <span class="stat-label">Puntaje Total</span>
-            <span class="stat-val" id="total-score">0 / 15</span>
+            <span class="stat-label">Actividades Entregadas</span>
+            <span class="stat-val" id="total-score">0 / 9</span>
           </div>
           <div class="stat-box">
             <span class="stat-label">Insignia</span>
@@ -197,7 +197,7 @@
       <!-- Module Context Brief -->
       <div class="dashboard-context-card">
         <h3>Módulo Práctico: Aplicación de Formación y Desarrollo</h3>
-        <p>Para aprobar el módulo de forma autónoma, debés resolver las siguientes <strong>9 actividades reflexivas</strong> de investigación y auto-evaluación basadas en el caso empresarial. Cada entrega será evaluada con inteligencia artificial a través del modelo Google Gemini en base a una rúbrica estricta de <strong>1 a 5 puntos</strong>.</p>
+        <p>Para aprobar el módulo de forma autónoma, debés resolver las siguientes <strong>9 actividades reflexivas</strong> de investigación y auto-evaluación basadas en el caso empresarial. Cada entrega se registrará en tu portafolio digital para la posterior auditoría del cuerpo docente.</p>
         
         <div class="progress-container">
           <div class="progress-text-bar">
@@ -351,8 +351,8 @@
                 
                 <div class="cert-details-grid">
                   <div class="cert-detail">
-                    <span class="cert-det-label">Desempeño Obtenido</span>
-                    <span class="cert-det-val" id="cert-score">15 / 15 Puntos</span>
+                    <span class="cert-det-label">Progreso Alcanzado</span>
+                    <span class="cert-det-val" id="cert-score">9 / 9 Actividades</span>
                   </div>
                   <div class="cert-detail">
                     <span class="cert-det-label">Insignia Otorgada</span>
@@ -377,7 +377,7 @@
                   </div>
                   <div class="sig-block">
                     <div class="sig-line"></div>
-                    <span class="sig-title">Evaluador Inteligencia Artificial</span>
+                    <span class="sig-title">Evaluación Corporativa</span>
                   </div>
                 </div>
               </div>
@@ -501,12 +501,12 @@
         <p class="activity-instruction" id="modal-act-instruction">Instrucciones...</p>
       </div>
 
-      <div class="modal-content-grid">
+      <div class="modal-content-single">
         <!-- Submission Form -->
-        <form id="activity-form" class="modal-form">
+        <form id="activity-form" class="modal-form-full">
           <div class="form-group">
             <label for="act-reflection">1. Análisis y Reflexión del Tema</label>
-            <textarea id="act-reflection" placeholder="Escribí tu reflexión teórica o análisis práctico detallando los puntos clave..." rows="6" required></textarea>
+            <textarea id="act-reflection" placeholder="Escribí tu reflexión teórica o análisis práctico detallando los puntos clave..." rows="8" required></textarea>
           </div>
           
           <div class="form-group">
@@ -522,37 +522,11 @@
           <div class="form-actions">
             <button type="button" class="btn btn-outline" onclick="closeActivity()">Volver</button>
             <button type="submit" class="btn btn-primary" id="btn-submit-eval">
-              <span class="btn-text">Enviar para Evaluación IA</span>
-              <span class="loader-inline" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Procesando...</span>
+              <span class="btn-text">Guardar Entrega <i class="fa-solid fa-cloud-arrow-up"></i></span>
+              <span class="loader-inline" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Guardando...</span>
             </button>
           </div>
         </form>
-
-        <!-- Feedback Sidebar -->
-        <div class="feedback-sidebar" id="feedback-sidebar">
-          <div class="feedback-sidebar-placeholder" id="feedback-placeholder">
-            <i class="fa-solid fa-robot"></i>
-            <h4>Evaluación Automatizada</h4>
-            <p>Completá los campos y hacé clic en "Enviar" para recibir tu feedback académico instantáneo de Gemini AI.</p>
-          </div>
-          
-          <div class="feedback-sidebar-content" id="feedback-content" style="display: none;">
-            <div class="feedback-score-bar">
-              <h4>Tu Calificación</h4>
-              <div class="score-circle">
-                <span class="score-num" id="feedback-score-display">0</span>
-                <span class="score-total">/ 5</span>
-              </div>
-            </div>
-            <div class="feedback-text-box">
-              <h5>Devolución de la IA:</h5>
-              <p id="feedback-text-display">...</p>
-            </div>
-            <div class="feedback-status-pill">
-              <i class="fa-solid fa-circle-check"></i> Actividad Aprobada
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

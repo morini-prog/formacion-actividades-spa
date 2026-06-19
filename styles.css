@@ -1010,6 +1010,13 @@ body.dark-theme .app-header {
   overflow: hidden;
 }
 
+.modal-content-single {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
 .modal-form {
   padding: 2rem 2.5rem;
   overflow-y: auto;
@@ -1018,6 +1025,16 @@ body.dark-theme .app-header {
   gap: 1.5rem;
   border-right: 1px solid var(--border-color);
   max-height: calc(100vh - 12rem);
+}
+
+.modal-form-full {
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: calc(100vh - 12rem);
+  width: 100%;
 }
 
 .form-actions {
