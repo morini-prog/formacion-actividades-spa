@@ -82,6 +82,14 @@ function initNavigation() {
   });
 }
 
+window.openAuthModal = function() {
+  document.getElementById('modal-student-auth').classList.add('active');
+};
+
+window.closeAuthModal = function() {
+  document.getElementById('modal-student-auth').classList.remove('active');
+};
+
 function switchView(viewId) {
   state.activeView = viewId;
   
@@ -96,26 +104,34 @@ function switchView(viewId) {
     targetSection.classList.add('active');
   }
 
-  // Adjust header buttons visibility
+  // Adjust header buttons and landing navigation visibility
   const logoutBtn = document.getElementById('logout-btn');
   const teacherBtn = document.getElementById('teacher-access-btn');
+  const landingNav = document.getElementById('landing-nav');
+  const landingLoginBtn = document.getElementById('landing-login-btn');
 
   if (viewId === 'view-student') {
     logoutBtn.style.display = 'inline-flex';
     teacherBtn.style.display = 'inline-flex';
     teacherBtn.classList.remove('btn-primary');
     teacherBtn.classList.add('btn-outline');
+    landingNav.style.display = 'none';
+    landingLoginBtn.style.display = 'none';
   } else if (viewId === 'view-teacher') {
     logoutBtn.style.display = 'none';
     teacherBtn.style.display = 'inline-flex';
     teacherBtn.classList.add('btn-primary');
     teacherBtn.classList.remove('btn-outline');
+    landingNav.style.display = 'none';
+    landingLoginBtn.style.display = 'none';
   } else {
-    // view-auth
+    // view-auth (Landing page)
     logoutBtn.style.display = 'none';
     teacherBtn.style.display = 'inline-flex';
     teacherBtn.classList.remove('btn-primary');
     teacherBtn.classList.add('btn-outline');
+    landingNav.style.display = 'flex';
+    landingLoginBtn.style.display = 'inline-flex';
   }
 }
 
@@ -155,6 +171,7 @@ function initAuthForm() {
       // Load student progress
       await fetchStudentProgress(email);
       switchView('view-student');
+      closeAuthModal();
       
     } catch (err) {
       console.error(err);

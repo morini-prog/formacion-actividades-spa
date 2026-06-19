@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRO-TALENT | Formación y Desarrollo - Portal de Actividades</title>
-  <!-- Google Fonts - Inter for clean typography -->
+  <title>PRO-TALENT | Formación y Desarrollo - Portal Corporativo</title>
+  <!-- Google Fonts - Inter for clean premium typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- FontAwesome for UI Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- CSS Stylesheet -->
@@ -16,7 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-  <!-- Header Bar -->
+  <!-- Sticky Header Bar -->
   <header class="app-header">
     <div class="logo">
       <span class="logo-box">PT</span>
@@ -25,50 +25,153 @@
         <span class="subtitle">Formación & Desarrollo</span>
       </div>
     </div>
+
+    <!-- Navigation links for Landing Page (hidden when student is active) -->
+    <nav class="header-nav" id="landing-nav">
+      <a href="#hero" class="nav-link">Inicio</a>
+      <a href="#features" class="nav-link">Metodología</a>
+      <a href="#value" class="nav-link">Innovación IA</a>
+    </nav>
     
     <div class="header-actions">
       <button id="theme-toggle" class="btn-icon" aria-label="Cambiar Tema" title="Cambiar Tema">
         <i class="fa-solid fa-moon"></i>
+      </button>
+      <button id="landing-login-btn" class="btn btn-outline" onclick="openAuthModal()">
+        <i class="fa-solid fa-user-graduate"></i> <span>Ingresar</span>
       </button>
       <button id="teacher-access-btn" class="btn btn-outline" title="Acceso Docente">
         <i class="fa-solid fa-chalkboard-user"></i>
         <span>Acceso Docente</span>
       </button>
       <button id="logout-btn" class="btn btn-outline btn-logout" style="display: none;" title="Cerrar Sesión">
-        <i class="fa-solid fa-right-from-bracket"></i>
+        <i class="fa-solid fa-right-from-bracket"></i> <span>Cerrar Sesión</span>
       </button>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="app-container">
+  <main class="app-main-wrapper">
     
-    <!-- 1. REGISTER / LOGIN VIEW -->
-    <section id="view-auth" class="auth-card view-section active">
-      <div class="card-header">
-        <h2>Registro de Estudiante</h2>
-        <p>Ingresá tus datos para iniciar el módulo práctico de actividades.</p>
-      </div>
-      <form id="auth-form" class="form-grid">
-        <div class="form-group">
-          <label for="student-name">Nombre</label>
-          <input type="text" id="student-name" placeholder="Ej. Juan" required autocomplete="given-name">
+    <!-- ==========================================================================
+         1. LANDING PAGE VIEW (SaaS/Agency Style)
+         ========================================================================== -->
+    <section id="view-auth" class="landing-page view-section active">
+      
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero-block">
+        <div class="hero-content">
+          <span class="badge-accent">MÓDULO IV • FORMACIÓN CORPORATIVA</span>
+          <h2 class="hero-title">Impulsá el Talento de tu Organización con <strong>Inteligencia Artificial</strong></h2>
+          <p class="hero-subtitle">La plataforma educativa definitiva para dominar el diagnóstico de necesidades (DNC), la planificación pedagógica SMART y la retención del talento bajo estándares internacionales.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-large" onclick="openAuthModal()">Comenzar Gratis <i class="fa-solid fa-arrow-right"></i></button>
+            <a href="#features" class="btn btn-outline btn-large">Ver Programa</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="student-lastname">Apellido</label>
-          <input type="text" id="student-lastname" placeholder="Ej. Pérez" required autocomplete="family-name">
+        <div class="hero-visual">
+          <div class="mockup-frame">
+            <img src="dashboard_mockup.png" alt="Dashboard Administrativo Mockup" class="mockup-image">
+          </div>
         </div>
-        <div class="form-group full-width">
-          <label for="student-email">Correo Electrónico</label>
-          <input type="email" id="student-email" placeholder="juan.perez@ejemplo.com" required autocomplete="email">
+      </section>
+
+      <!-- FEATURES GRID SECTION -->
+      <section id="features" class="features-block">
+        <div class="section-header">
+          <span class="section-tag">Metodología Académica</span>
+          <h3 class="section-title">Estructura Curricular Basada en Competencias</h3>
+          <p class="section-subtitle">Diseñamos 3 actividades obligatorias que exigen la lectura profunda del material teórico, fomentando el pensamiento crítico y la toma de decisiones estratégicas.</p>
         </div>
-        <button type="submit" class="btn btn-primary full-width">
-          Comenzar Actividades <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
+        
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h4>DNC y Retorno de Inversión</h4>
+            <p>Diseñá diagnósticos de brechas utilizando encuestas y observación directa. Justificá la inversión en capacitación citando estudios fundamentales de <strong>Huselid (1995)</strong> y reportes de <strong>LinkedIn</strong>.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+            <h4>Planificación SMART</h4>
+            <p>Estructurá objetivos pedagógicos claros, medibles y limitados en el tiempo. Articulá metodologías blended y diseñá el desarrollo de habilidades blandas siguiendo los casos de éxito de <strong>Google</strong>.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h4> Kirkpatrick & Cultura del Error</h4>
+            <p>Implementá los seis pasos clave del proceso de evaluación para recolectar insights y justificar el retorno del programa. Fomentá un entorno de tolerancia al error como motor de innovación.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE SECTION (50/50 Split) -->
+      <section id="value" class="value-block">
+        <div class="value-text">
+          <span class="section-tag">Innovación Pedagógica</span>
+          <h3 class="section-title">Evaluación Educativa Potenciada por Gemini AI</h3>
+          <p class="value-description">Nuestra plataforma cuenta con un docente evaluador virtual programado con la API de Google Gemini. Cada entrega es auditada con total rigor en base a la rúbrica teórica del módulo, ofreciéndote retroalimentación rioplatense inmediata y constructiva.</p>
+          
+          <ul class="value-checklist">
+            <li><i class="fa-solid fa-circle-check"></i> Corrección formal en menos de 5 segundos.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Validación estricta de autores y citas teóricas.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Gamificación con insignias académicas digitales.</li>
+          </ul>
+        </div>
+        
+        <div class="value-visual">
+          <div class="value-mock-card">
+            <div class="mock-card-header">
+              <span class="mock-avatar">IA</span>
+              <div>
+                <h5>Tutor virtual PRO-TALENT</h5>
+                <span>Evaluación de Actividad N° 1</span>
+              </div>
+              <span class="mock-score-pill">5 / 5 Puntos</span>
+            </div>
+            <div class="mock-card-body">
+              <p>"¡Excelente análisis, Juan! Lograste incorporar de manera muy clara la observación directa como herramienta de DNC. Tu justificación basada en Huselid (1995) demuestra cómo las prácticas de alto rendimiento reducen la rotación en PyMEs. ¡Impecable!"</p>
+            </div>
+            <div class="mock-card-footer">
+              <span class="badge-status-tag">Líder de Aprendizaje 👑</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER / FOOTER SECTION -->
+      <footer class="landing-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-box">PT</span>
+            <h3>PRO-TALENT</h3>
+            <p>Plataforma inteligente de Formación & Desarrollo Organizacional.</p>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Novedades Académicas</h4>
+            <p>Suscribite para recibir artículos técnicos de recursos humanos y actualizaciones de IA.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!'); this.reset();">
+              <input type="email" placeholder="Tu correo electrónico" required>
+              <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 PRO-TALENT. Todos los derechos reservados. Módulo IV: Formación y Desarrollo.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </footer>
+
     </section>
 
-    <!-- 2. STUDENT DASHBOARD VIEW -->
+    <!-- ==========================================================================
+         2. STUDENT DASHBOARD VIEW
+         ========================================================================== -->
     <section id="view-student" class="student-dashboard view-section">
       <!-- Welcome Banner -->
       <div class="student-profile-bar">
@@ -94,7 +197,7 @@
       <!-- Module Context Brief -->
       <div class="dashboard-context-card">
         <h3>Módulo Práctico: Aplicación de Formación y Desarrollo</h3>
-        <p>Para completar el módulo de forma autónoma, debés resolver las siguientes <strong>3 actividades reflexivas</strong> de investigación y auto-evaluación. Cada entrega será evaluada con inteligencia artificial a través del modelo Google Gemini en base a una rúbrica de <strong>1 a 5 puntos</strong>.</p>
+        <p>Para aprobar el módulo de forma autónoma, debés resolver las siguientes <strong>3 actividades reflexivas</strong> de investigación y auto-evaluación basadas en el caso empresarial. Cada entrega será evaluada con inteligencia artificial a través del modelo Google Gemini en base a una rúbrica estricta de <strong>1 a 5 puntos</strong>.</p>
         
         <div class="progress-container">
           <div class="progress-text-bar">
@@ -146,7 +249,7 @@
         </div>
       </div>
 
-      <!-- Certificate Download Box (Appears when all 3 are completed) -->
+      <!-- Certificate Download Box -->
       <div class="certificate-unlock-card" id="certificate-unlock-card" style="display: none;">
         <div class="certificate-banner-text">
           <i class="fa-solid fa-circle-check unlock-icon animate-pulse"></i>
@@ -156,7 +259,7 @@
           </div>
         </div>
         
-        <!-- The actual digital certificate container that will be captured -->
+        <!-- Certificate Image Canvas -->
         <div class="certificate-wrapper-box">
           <div id="completion-certificate" class="completion-certificate">
             <div class="cert-border-outer">
@@ -216,76 +319,11 @@
       </div>
     </section>
 
-    <!-- 3. DETAILED ACTIVITY EDIT/WORK PANEL (MODAL OVERLAY) -->
-    <div id="panel-activity" class="activity-overlay">
-      <div class="activity-modal">
-        <button class="modal-close-btn" onclick="closeActivity()">&times;</button>
-        
-        <div class="modal-header">
-          <span class="modal-activity-num" id="modal-act-num">Actividad 01</span>
-          <h2 id="modal-act-title">Título de la Actividad</h2>
-          <p class="activity-instruction" id="modal-act-instruction">Instrucciones detalladas de la actividad...</p>
-        </div>
-
-        <div class="modal-content-grid">
-          <!-- Submission Form -->
-          <form id="activity-form" class="modal-form">
-            <div class="form-group">
-              <label for="act-reflection">1. Análisis y Reflexión del Tema</label>
-              <textarea id="act-reflection" placeholder="Escribí tu reflexión teórica o análisis práctico detallando los puntos clave..." rows="6" required></textarea>
-            </div>
-            
-            <div class="form-group">
-              <label for="act-url">2. Enlace (URL) de Recurso de Investigación</label>
-              <input type="url" id="act-url" placeholder="https://ejemplo.com/articulo-o-video-relacionado" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="act-justification">3. Justificación del Recurso Elegido</label>
-              <textarea id="act-justification" placeholder="Justificá con argumentos sólidos por qué el artículo o video es valioso para esta temática..." rows="4" required></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="button" class="btn btn-outline" onclick="closeActivity()">Volver</button>
-              <button type="submit" class="btn btn-primary" id="btn-submit-eval">
-                <span class="btn-text">Enviar para Evaluación IA</span>
-                <span class="loader-inline" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Procesando...</span>
-              </button>
-            </div>
-          </form>
-
-          <!-- Feedback Sidebar (hidden/visible dynamically) -->
-          <div class="feedback-sidebar" id="feedback-sidebar">
-            <div class="feedback-sidebar-placeholder" id="feedback-placeholder">
-              <i class="fa-solid fa-robot"></i>
-              <h4>Evaluación Automatizada</h4>
-              <p>Completá los campos de la izquierda y hacé clic en "Enviar" para recibir tu feedback académico instantáneo de Gemini AI.</p>
-            </div>
-            
-            <div class="feedback-sidebar-content" id="feedback-content" style="display: none;">
-              <div class="feedback-score-bar">
-                <h4>Tu Calificación</h4>
-                <div class="score-circle">
-                  <span class="score-num" id="feedback-score-display">0</span>
-                  <span class="score-total">/ 5</span>
-                </div>
-              </div>
-              <div class="feedback-text-box">
-                <h5>Devolución de la IA:</h5>
-                <p id="feedback-text-display">...</p>
-              </div>
-              <div class="feedback-status-pill">
-                <i class="fa-solid fa-circle-check"></i> Actividad Aprobada
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. TEACHER PANEL VIEW -->
+    <!-- ==========================================================================
+         3. TEACHER PANEL VIEW
+         ========================================================================== -->
     <section id="view-teacher" class="teacher-panel view-section">
-      <!-- Authorization Screen (shown if not logged in as teacher) -->
+      <!-- Authorization Screen -->
       <div id="teacher-login" class="auth-card teacher-auth">
         <div class="card-header">
           <h2>Acceso Docente Autorizado</h2>
@@ -303,7 +341,7 @@
         </form>
       </div>
 
-      <!-- Main Dashboard (shown after password verification) -->
+      <!-- Main Teacher Dashboard -->
       <div id="teacher-dashboard" style="display: none;">
         <div class="teacher-header-bar">
           <div>
@@ -350,11 +388,104 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="app-footer">
-    <p>&copy; 2026 PRO-TALENT. Módulo IV: Formación y Desarrollo.</p>
-    <div class="version-tag">Premium Edition v2.0</div>
-  </footer>
+  <!-- ==========================================================================
+       MODALS & OVERLAYS
+       ========================================================================== -->
+
+  <!-- STUDENT REGISTRATION/LOGIN MODAL -->
+  <div id="modal-student-auth" class="activity-overlay">
+    <div class="auth-modal-card">
+      <button class="modal-close-btn" onclick="closeAuthModal()">&times;</button>
+      <div class="card-header">
+        <h2>Ingreso a Actividades</h2>
+        <p>Completá tus datos para acceder a tu panel de progreso personalizado.</p>
+      </div>
+      <form id="auth-form" class="form-grid">
+        <div class="form-group">
+          <label for="student-name">Nombre</label>
+          <input type="text" id="student-name" placeholder="Ej. Juan" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="student-lastname">Apellido</label>
+          <input type="text" id="student-lastname" placeholder="Ej. Pérez" required autocomplete="family-name">
+        </div>
+        <div class="form-group full-width">
+          <label for="student-email">Correo Electrónico</label>
+          <input type="email" id="student-email" placeholder="juan.perez@ejemplo.com" required autocomplete="email">
+        </div>
+        <button type="submit" class="btn btn-primary full-width">
+          Ingresar al Portal <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DETAILED ACTIVITY WORK PANEL -->
+  <div id="panel-activity" class="activity-overlay">
+    <div class="activity-modal">
+      <button class="modal-close-btn" onclick="closeActivity()">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-activity-num" id="modal-act-num">Actividad 01</span>
+        <h2 id="modal-act-title">Título de la Actividad</h2>
+        <p class="activity-instruction" id="modal-act-instruction">Instrucciones...</p>
+      </div>
+
+      <div class="modal-content-grid">
+        <!-- Submission Form -->
+        <form id="activity-form" class="modal-form">
+          <div class="form-group">
+            <label for="act-reflection">1. Análisis y Reflexión del Tema</label>
+            <textarea id="act-reflection" placeholder="Escribí tu reflexión teórica o análisis práctico detallando los puntos clave..." rows="6" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="act-url">2. Enlace (URL) de Recurso de Investigación</label>
+            <input type="url" id="act-url" placeholder="https://ejemplo.com/articulo-o-video-relacionado" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="act-justification">3. Justificación del Recurso Elegido</label>
+            <textarea id="act-justification" placeholder="Justificá con argumentos sólidos por qué el artículo o video es valioso para esta temática..." rows="4" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" onclick="closeActivity()">Volver</button>
+            <button type="submit" class="btn btn-primary" id="btn-submit-eval">
+              <span class="btn-text">Enviar para Evaluación IA</span>
+              <span class="loader-inline" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Procesando...</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Feedback Sidebar -->
+        <div class="feedback-sidebar" id="feedback-sidebar">
+          <div class="feedback-sidebar-placeholder" id="feedback-placeholder">
+            <i class="fa-solid fa-robot"></i>
+            <h4>Evaluación Automatizada</h4>
+            <p>Completá los campos y hacé clic en "Enviar" para recibir tu feedback académico instantáneo de Gemini AI.</p>
+          </div>
+          
+          <div class="feedback-sidebar-content" id="feedback-content" style="display: none;">
+            <div class="feedback-score-bar">
+              <h4>Tu Calificación</h4>
+              <div class="score-circle">
+                <span class="score-num" id="feedback-score-display">0</span>
+                <span class="score-total">/ 5</span>
+              </div>
+            </div>
+            <div class="feedback-text-box">
+              <h5>Devolución de la IA:</h5>
+              <p id="feedback-text-display">...</p>
+            </div>
+            <div class="feedback-status-pill">
+              <i class="fa-solid fa-circle-check"></i> Actividad Aprobada
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Detail Modal for Student Submissions (inside Teacher Panel) -->
   <div id="panel-student-detail" class="activity-overlay">
