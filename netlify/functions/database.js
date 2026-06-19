@@ -2,52 +2,8 @@ const https = require('https');
 
 // Fallback in-memory database if GitHub API is not configured
 let localInMemoryDB = {
-  students: [
-    {
-      email: "tomas.gonzalez@uade.edu.ar",
-      first_name: "Tomás",
-      last_name: "González",
-      created_at: "2026-06-19T10:00:00Z"
-    },
-    {
-      email: "milagros.rodriguez@uba.ar",
-      first_name: "Milagros",
-      last_name: "Rodríguez",
-      created_at: "2026-06-19T10:15:00Z"
-    }
-  ],
-  submissions: [
-    {
-      student_email: "tomas.gonzalez@uade.edu.ar",
-      activityIndex: 1,
-      reflection: "Análisis sobre la importancia del diagnóstico de necesidades (DNC) enfocado en competencias digitales.",
-      url: "https://www.linkedin.com/pulse/dnc-digital-capacitacion",
-      justification: "Explica detalladamente cómo medir brechas digitales en PyMEs argentinas.",
-      score: 5,
-      feedback: "Excelente análisis crítico y justificación muy coherente.",
-      submitted_at: "2026-06-19T10:05:00Z"
-    },
-    {
-      student_email: "tomas.gonzalez@uade.edu.ar",
-      activityIndex: 2,
-      reflection: "Esquema del plan de formación blended learning para el área comercial.",
-      url: "https://www.redalyc.org/pdf/blended-learning-comercial",
-      justification: "Presenta datos empíricos de la efectividad de capacitaciones combinadas.",
-      score: 4,
-      feedback: "Buen diseño didáctico. Podrías sumar indicadores de evaluación de impacto.",
-      submitted_at: "2026-06-19T10:10:00Z"
-    },
-    {
-      student_email: "milagros.rodriguez@uba.ar",
-      activityIndex: 1,
-      reflection: "Análisis de la resistencia al cambio en planes de capacitación corporativos.",
-      url: "https://estudiosadministracion.uba.ar/resistencia-capacitacion",
-      justification: "Un paper académico de la UBA sobre factores psicosociales en el aprendizaje de adultos.",
-      score: 5,
-      feedback: "Excepcional nivel teórico y vinculación práctica con el contexto local.",
-      submitted_at: "2026-06-19T10:20:00Z"
-    }
-  ]
+  students: [],
+  submissions: []
 };
 
 const FILE_PATH = 'db.json';
